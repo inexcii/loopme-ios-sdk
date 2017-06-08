@@ -3,7 +3,7 @@
 The `LoopMe` bridge allows you to mediate between `AdMob` interstitial ads and `LoopMe`.
 <br/><b>NOTE</b>: This page assumes you have accounts on `AdMob` and `LoopMe` dashboards and already integrated with the `AdMob` SDK.
 
-The bridge is compatible with `LoopMe` SDK v5.1.2 and tested with `AdMob` SDK v7.10.1.
+The bridge is compatible with `LoopMe` SDK v5.1.2 and higher, tested with `AdMob` SDK v7.10.1.
 
 ### Create and configure custom event on AdMob dashboard ###
 
