@@ -1,3 +1,59 @@
+# LoopMe Mopub Interstitial Ad Bridge
+
+The `LoopMe` bridge allows you to mediate between `Mopub` interstitial ads and `LoopMe` interstitial ads.
+
+The bridge is compatible with `LoopMe` SDK v5.1.2 and higher and tested with `Mopub` SDK v4.9.1.
+
+### Create and configure custom native network on Mopub dashboard ###
+
+In order to mediate between Mopub interstitial ads and LoopMe interstitial ads you have to configure networks waterfall.
+<b>NOTE:</b> `LoopMe` is not available as a predefine network in the Mopub tool, SDK bridge needs to be manually configured with Mopub "Custom Native Network" option.
+
+* On Mopub dashboard click Networks -> add a network. Choose `Custom Native Network`
+* Configure `Custom Network` in the following way:
+<img src="images/custom_event_int.png"/>
+<b>custom event class</b>: MopubLoopMeInterstitialAdapter <br/>
+<b>custom event class data</b>: {"app_key" : "YOUR_APP_KEY"}  <br/>
+<b>NOTE:</b> You will get a unique app_key from the `LoopMe` dashboard when registering your ad spot.
+
+### Adding LoopMe SDK to your project ###
+
+* Download `LoopMeSDK` from this repository
+* Copy `LoopMeSDK` folder to your project (alternatively you can use LoopMeSDK as a subproject or build static library)
+* Copy `MopubLoopMeInterstitialAdapter.h` and `MopubLoopMeInterstitialAdapter.m` folder to your project 
+
+### Sample project ###
+
+Check out our `LoopMeMediatonDemo` project as an integration sample.
+
+# LoopMe Mopub Rewarded Video Ad Bridge
+
+The `LoopMe` bridge allows you to mediate between `Mopub` Rewarded Video ads and `LoopMe` Rewarded Video ads.
+
+The bridge is compatible with `LoopMe` SDK v5.1.2 and higher and tested with `Mopub` SDK v4.9.1.
+
+### Create and configure custom native network on Mopub dashboard ###
+
+In order to mediate between Mopub Rewarded Video ads and LoopMe Rewarded Video ads you have to configure networks waterfall.
+<b>NOTE:</b> `LoopMe` is not available as a predefine network in the Mopub tool, SDK bridge needs to be manually configured with Mopub "Custom Native Network" option.
+
+* On Mopub dashboard click Networks -> add a network. Choose `Custom Native Network`
+* Configure `Custom Network` in the following way:
+<img src="images/custom_event_rw.png"/>
+<b>custom event class</b>: MopubLoopMeRewardedVideoAdapter <br/>
+<b>custom event class data</b>: {"app_key" : "YOUR_APP_KEY", "currency_type" : "YOUR_CURRENCY_TYPE", "amount" : "YOUR_AMOUNT"}  <br/>
+<b>NOTE:</b> You will get a unique app_key from the `LoopMe` dashboard when registering your ad spot.
+
+### Adding LoopMe SDK to your project ###
+
+* Download `LoopMeSDK` from this repository
+* Copy `LoopMeSDK` folder to your project (alternatively you can use LoopMeSDK as a subproject or build static library)
+* Copy `MopubLoopMeRewardedVideoAdapter.h` and `MopubLoopMeRewardedVideoAdapter.m` folder to your project 
+
+### Sample project ###
+
+Check out our `LoopMeMediatonDemo` project as an integration sample.
+
 # LoopMe Mopub Native Ad Bridge #
 
 The `LoopMe` bridge allows you to mediate between `Mopub` native ads and `LoopMe` video banner.
