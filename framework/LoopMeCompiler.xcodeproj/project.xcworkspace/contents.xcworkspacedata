@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:LoopMeSDK.xcodeproj">
+      location = "self:/Users/bohdan/Work/open-mediation/LoopMe/iOS/framework/LoopMeCompiler.xcodeproj">
    </FileRef>
 </Workspace>

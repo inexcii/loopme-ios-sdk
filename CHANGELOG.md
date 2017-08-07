@@ -1,3 +1,8 @@
+## Version 6.3.2 (07.08.2017)
+
+- Bug fixes and performance improved.
+- Added project file for framework build.
+
 ## Version 6.3.1 (14.06.2017)
 
 - Changed name of resources bundle to avoid name conflicts.

@@ -48,14 +48,25 @@ const struct LoopMeTrackerNameStruct LoopMeTrackerName = {
 
 - (NSDictionary *)adIdsForMOAT {
     if (!_adIdsForMOAT) {
-    
-        NSRange macros = [_adResponseHTMLString rangeOfString:@"macros"];
-        NSRange package_ids = [_adResponseHTMLString rangeOfString:@"package_ids"];
-        NSString *macrosString = [_adResponseHTMLString substringWithRange:NSMakeRange(macros.location + 8, package_ids.location - macros.location - 10)];
+        NSScanner *scanner = [NSScanner scannerWithString:_adResponseHTMLString];
+        NSString *lmCampaignsString;
+        while ([scanner isAtEnd] == NO) {
+            [scanner scanUpToString:@"<script>" intoString:NULL] ;
+            [scanner scanUpToString:@"</script>" intoString:&lmCampaignsString];
+            lmCampaignsString = [lmCampaignsString stringByReplacingOccurrencesOfString:@"<script>" withString:@""];
+            if ([lmCampaignsString rangeOfString:@"lmCampaigns"].length > 0) {
+                break;
+            }
+        }
         
-        NSDictionary *jsonMacroses = [NSJSONSerialization JSONObjectWithData:[macrosString dataUsingEncoding:NSUTF8StringEncoding] options:kNilOptions error:nil];
+        NSRange rangeOfBrace = [lmCampaignsString rangeOfString:@"{"];
+        lmCampaignsString = [lmCampaignsString substringFromIndex:rangeOfBrace.location];
+
+        NSDictionary *jsonMacroses = [NSJSONSerialization JSONObjectWithData:[lmCampaignsString dataUsingEncoding:NSUTF8StringEncoding] options:kNilOptions error:nil];
+        jsonMacroses = [jsonMacroses objectForKey:@"macros"];
         
-        _adIdsForMOAT = @{@"level1" : [jsonMacroses[kLoopMeAdvertiser] stringByRemovingPercentEncoding], @"level2" : [jsonMacroses[kLoopMeCampaign] stringByRemovingPercentEncoding], @"level3" : [jsonMacroses[kLoopMeLineItem] stringByRemovingPercentEncoding], @"level4" : [jsonMacroses[kLoopMeCreative] stringByRemovingPercentEncoding], @"slicer1" : [jsonMacroses[kLoopMeAPP] stringByRemovingPercentEncoding], @"slicer2" : @""};
+        _adIdsForMOAT = [NSDictionary dictionaryWithObjectsAndKeys:[[jsonMacroses objectForKey:kLoopMeAdvertiser] stringByRemovingPercentEncoding], @"level1", [[jsonMacroses objectForKey:kLoopMeCampaign] stringByRemovingPercentEncoding], @"level2", [[jsonMacroses objectForKey:kLoopMeLineItem] stringByRemovingPercentEncoding], @"level3", [[jsonMacroses objectForKey:kLoopMeCreative] stringByRemovingPercentEncoding], @"level4", [[jsonMacroses objectForKey:kLoopMeAPP] stringByRemovingPercentEncoding], @"slicer1", @"", @"slicer2",  nil];
+        
     }
     return _adIdsForMOAT;
 }
@@ -94,22 +105,6 @@ const struct LoopMeTrackerNameStruct LoopMeTrackerName = {
     } else {
         _orientation = LoopMeAdOrientationUndefined;
     }
-}
-
-- (void)initAdIds {
-    NSRange macros = [_adResponseHTMLString rangeOfString:@"macros"];
-    NSRange package_ids = [_adResponseHTMLString rangeOfString:@"package_ids"];
-    NSString *macrosString = [_adResponseHTMLString substringWithRange:NSMakeRange(macros.location + 8, package_ids.location - macros.location - 10)];
-    
-    NSDictionary *jsonMacroses = [NSJSONSerialization JSONObjectWithData:[macrosString dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingAllowFragments error:nil];
-    
-    NSString *advertiser = [[NSString alloc] initWithString:jsonMacroses[kLoopMeAdvertiser]];
-    NSString *capmaign = [[NSString alloc] initWithString:jsonMacroses[kLoopMeCampaign]];
-    NSString *lineItem = [[NSString alloc] initWithString:jsonMacroses[kLoopMeLineItem]];
-    NSString *creative = [[NSString alloc] initWithString:jsonMacroses[kLoopMeCreative]];
-    NSString *app = [[NSString alloc] initWithString:jsonMacroses[kLoopMeAPP]];
-
-    _adIdsForMOAT = @{@"level1" : advertiser, @"level2" : capmaign, @"level3" : lineItem, @"level4" : creative, @"slicer1" : app, @"slicer2" : @""};
 }
 
 - (NSString *)description {
