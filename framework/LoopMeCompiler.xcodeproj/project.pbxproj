@@ -52,8 +52,8 @@
 		47002A4E1F2642D600469925 /* UIImage+LoopMeBinaryImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 470029F31F2642D600469925 /* UIImage+LoopMeBinaryImage.m */; };
 		47002A4F1F2642D600469925 /* LoopMeAnalyticsProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 470029F41F2642D600469925 /* LoopMeAnalyticsProvider.h */; };
 		47002A501F2642D600469925 /* LoopMeAnalyticsProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 470029F51F2642D600469925 /* LoopMeAnalyticsProvider.m */; };
-		47002A511F2642D600469925 /* LoopMeDefinitions.h in Headers */ = {isa = PBXBuildFile; fileRef = 470029F61F2642D600469925 /* LoopMeDefinitions.h */; };
-		47002A521F2642D600469925 /* LoopMeError.h in Headers */ = {isa = PBXBuildFile; fileRef = 470029F71F2642D600469925 /* LoopMeError.h */; };
+		47002A511F2642D600469925 /* LoopMeDefinitions.h in Headers */ = {isa = PBXBuildFile; fileRef = 470029F61F2642D600469925 /* LoopMeDefinitions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		47002A521F2642D600469925 /* LoopMeError.h in Headers */ = {isa = PBXBuildFile; fileRef = 470029F71F2642D600469925 /* LoopMeError.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		47002A531F2642D600469925 /* LoopMeError.m in Sources */ = {isa = PBXBuildFile; fileRef = 470029F81F2642D600469925 /* LoopMeError.m */; };
 		47002A541F2642D600469925 /* LoopMeErrorEventSender.h in Headers */ = {isa = PBXBuildFile; fileRef = 470029F91F2642D600469925 /* LoopMeErrorEventSender.h */; };
 		47002A551F2642D600469925 /* LoopMeErrorEventSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 470029FA1F2642D600469925 /* LoopMeErrorEventSender.m */; };
@@ -504,13 +504,14 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47002A521F2642D600469925 /* LoopMeError.h in Headers */,
+				47002A511F2642D600469925 /* LoopMeDefinitions.h in Headers */,
 				47002A761F2642D600469925 /* LoopMeTargeting.h in Headers */,
 				47002A5C1F2642D600469925 /* LoopMeLogging.h in Headers */,
 				47002A741F2642D600469925 /* LoopMeInterstitial.h in Headers */,
 				47002A731F2642D600469925 /* LoopMeAdView.h in Headers */,
 				47002A681F2642D600469925 /* LoopMeCancelView.h in Headers */,
 				47002A321F2642D600469925 /* LoopMeJSCommunicatorProtocol.h in Headers */,
-				47002A521F2642D600469925 /* LoopMeError.h in Headers */,
 				47002A6A1F2642D600469925 /* LoopMeCloseButton.h in Headers */,
 				47002A491F2642D600469925 /* NSString+Encryption.h in Headers */,
 				47002A3D1F2642D600469925 /* LoopMeReachability.h in Headers */,
@@ -546,7 +547,6 @@
 				D003B2701AFB9C3D007C7E0F /* LoopMeCompiler-Prefix.pch in Headers */,
 				47002A341F2642D600469925 /* LoopMeAdDisplayController.h in Headers */,
 				47002A2A1F2642D600469925 /* LoopMeServerURLBuilder.h in Headers */,
-				47002A511F2642D600469925 /* LoopMeDefinitions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
