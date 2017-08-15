@@ -8,7 +8,7 @@
 #import "LDBannerViewController.h"
 #import "UIImage+iphone5.h"
 
-#import "LoopMeAdView.h"
+#import <LoopMeSDK/LoopMeAdView.h>
 
 const float kLDAdViewHeight = 168.75; // Video dimension 16x9
 const float kLDAdViewWidth = 300.0f;

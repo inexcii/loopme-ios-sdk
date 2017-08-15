@@ -8,7 +8,7 @@
 #import "LDInterstitialViewController.h"
 #import "UIImage+iphone5.h"
 
-#import "LoopMeInterstitial.h"
+#import <LoopMeSDK/LoopMeInterstitial.h>
 
 @interface LDInterstitialViewController ()
 <

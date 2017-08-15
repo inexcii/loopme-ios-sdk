@@ -6,7 +6,7 @@
 //
 
 #import "LDAppDelegate.h"
-#import "LoopMeLogging.h"
+#import <LoopMeSDK/LoopMeLogging.h>
 
 @implementation LDAppDelegate
 

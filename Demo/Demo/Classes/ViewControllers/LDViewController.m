@@ -32,7 +32,7 @@
     self.navigationItem.leftBarButtonItem = barBtn;
     
     NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
-    UIBarButtonItem *rightBtn = [[UIBarButtonItem alloc] initWithTitle:version style:UIBarButtonItemStyleBordered target:nil action:nil];
+    UIBarButtonItem *rightBtn = [[UIBarButtonItem alloc] initWithTitle:version style:UIBarButtonItemStylePlain target:nil action:nil];
     self.navigationItem.rightBarButtonItem = rightBtn;
 }
 

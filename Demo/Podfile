@@ -1,3 +1,4 @@
 platform :ios, '9.0'
 target 'Demo'
-pod 'LoopMeSDK', '~> 6.3.0'
+use_frameworks! 
+pod 'LoopMeSDK' 

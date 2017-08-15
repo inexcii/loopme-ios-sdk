@@ -8,7 +8,7 @@
 #import "LDScrollableViewController.h"
 #import "TableCityCell.h"
 
-#import "LoopMeAdView.h"
+#import <LoopMeSDK/LoopMeAdView.h>
 
 const float kLDAdCellHeight = 168.75; // Video dimension 16x9
 const float kLDAdCellWidth = 300.0f;

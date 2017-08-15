@@ -178,7 +178,7 @@
 		D003B26B1AFB9C2D007C7E0F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = LoopMeCompiler/Info.plist; sourceTree = "<group>"; };
 		D003B26D1AFB9C3D007C7E0F /* LoopMeCompiler-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "LoopMeCompiler-Info.plist"; path = "LoopMeCompiler/LoopMeCompiler-Info.plist"; sourceTree = "<group>"; };
 		D003B26E1AFB9C3D007C7E0F /* LoopMeCompiler-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "LoopMeCompiler-Prefix.pch"; path = "LoopMeCompiler/LoopMeCompiler-Prefix.pch"; sourceTree = "<group>"; };
-		D05C331B1A7FC23500E0E9A9 /* LoopMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoopMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D05C331B1A7FC23500E0E9A9 /* LoopMeSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoopMeSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -489,7 +489,7 @@
 		D05C331C1A7FC23500E0E9A9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D05C331B1A7FC23500E0E9A9 /* LoopMe.framework */,
+				D05C331B1A7FC23500E0E9A9 /* LoopMeSDK.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -567,7 +567,7 @@
 			);
 			name = LoopMeCompiler;
 			productName = UnityAdsCompiler;
-			productReference = D05C331B1A7FC23500E0E9A9 /* LoopMe.framework */;
+			productReference = D05C331B1A7FC23500E0E9A9 /* LoopMeSDK.framework */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -782,8 +782,9 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LINK_WITH_STANDARD_LIBRARIES = NO;
 				MACH_O_TYPE = mh_object;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.loopme.LoopMeSDK;
-				PRODUCT_NAME = LoopMe;
+				PRODUCT_NAME = LoopMeSDK;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SYMROOT = build;
@@ -812,7 +813,7 @@
 				LINK_WITH_STANDARD_LIBRARIES = NO;
 				MACH_O_TYPE = mh_object;
 				PRODUCT_BUNDLE_IDENTIFIER = com.loopme.LoopMeSDK;
-				PRODUCT_NAME = LoopMe;
+				PRODUCT_NAME = LoopMeSDK;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SYMROOT = build;
