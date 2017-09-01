@@ -14,5 +14,6 @@
 - (nullable NSString *)lm_MD5;
 - (nullable NSString *)lm_AES128Encrypt;
 - (nullable NSString *)lm_stringByAddingPercentEncodingForRFC3986;
+- (nullable NSString *)lm_stringByRemovingPercentEncoding;
 
 @end

@@ -10,6 +10,8 @@
 #import "NSString+Encryption.h"
 #import "NSData+LoopMeAES128.h"
 
+static const NSUInteger kLoopMeMaxDecodeIntegration = 5;
+
 @implementation NSString (Encryption)
 
 + (NSString *)lm_MD5:(NSString *)key {
@@ -43,6 +45,19 @@
     return [self
             stringByAddingPercentEncodingWithAllowedCharacters:
             allowed];
+}
+
+- (NSString *)lm_stringByRemovingPercentEncoding {
+    NSString *copySelf = [self copy];
+    for (int i = 0; i < kLoopMeMaxDecodeIntegration; i++) {
+        
+        if ([copySelf containsString:@"%"]) {
+            copySelf = [copySelf stringByRemovingPercentEncoding];
+        } else {
+            break;
+        }
+    }
+    return copySelf;
 }
 
 @end

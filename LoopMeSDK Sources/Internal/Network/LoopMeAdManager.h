@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @class LoopMeAdConfiguration;
-@class LoopMeInterstitial;
+@class LoopMeInterstitialGeneral;
 @class LoopMeAdManager;
 @class LoopMeTargeting;
 

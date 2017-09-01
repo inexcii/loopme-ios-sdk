@@ -14,6 +14,7 @@
 #import "LoopMeVideoCommunicatorProtocol.h"
 #import "NSURL+LoopMeAdditions.h"
 #import "LoopMeLogging.h"
+#import "NSString+Encryption.h"
 
 NSString * const _kLoopMeURLScheme = @"loopme";
 
@@ -101,7 +102,7 @@ const struct LoopMeWebViewStateStruct LoopMeWebViewState = {
 
 - (void)loadVideoWithParams:(NSDictionary *)params {
     NSString *videoSource = params[@"src"];
-    [self.videoClient loadWithURL:[NSURL URLWithString:[videoSource stringByRemovingPercentEncoding]]];
+    [self.videoClient loadWithURL:[NSURL URLWithString:[videoSource lm_stringByRemovingPercentEncoding]]];
 }
 
 - (void)playVideoWithParams:(NSDictionary *)params {

@@ -7,174 +7,178 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		474D67571F42EEB100F4B916 /* LoopMeAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 474D66F01F42EEB100F4B916 /* LoopMeAdView.m */; };
-		474D67581F42EEB100F4B916 /* LoopMeMaximizedViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 474D66F21F42EEB100F4B916 /* LoopMeMaximizedViewController.h */; };
-		474D67591F42EEB100F4B916 /* LoopMeMaximizedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 474D66F31F42EEB100F4B916 /* LoopMeMaximizedViewController.m */; };
-		474D675A1F42EEB100F4B916 /* LoopMeMinimizedAdView.h in Headers */ = {isa = PBXBuildFile; fileRef = 474D66F51F42EEB100F4B916 /* LoopMeMinimizedAdView.h */; };
-		474D675B1F42EEB100F4B916 /* LoopMeMinimizedAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 474D66F61F42EEB100F4B916 /* LoopMeMinimizedAdView.m */; };
-		474D675C1F42EEB100F4B916 /* LoopMeServerURLBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 474D66F81F42EEB100F4B916 /* LoopMeServerURLBuilder.h */; };
-		474D675D1F42EEB100F4B916 /* LoopMeServerURLBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 474D66F91F42EEB100F4B916 /* LoopMeServerURLBuilder.m */; };
-		474D675E1F42EEB100F4B916 /* LoopMeJSClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 474D66FB1F42EEB100F4B916 /* LoopMeJSClient.h */; };
-		474D675F1F42EEB100F4B916 /* LoopMeJSClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 474D66FC1F42EEB100F4B916 /* LoopMeJSClient.m */; };
-		474D67601F42EEB100F4B916 /* LoopMeMRAIDClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 474D66FD1F42EEB100F4B916 /* LoopMeMRAIDClient.h */; };
-		474D67611F42EEB100F4B916 /* LoopMeMRAIDClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 474D66FE1F42EEB100F4B916 /* LoopMeMRAIDClient.m */; };
-		474D67621F42EEB100F4B916 /* LoopMeVideoClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 474D66FF1F42EEB100F4B916 /* LoopMeVideoClient.h */; };
-		474D67631F42EEB100F4B916 /* LoopMeVideoClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 474D67001F42EEB100F4B916 /* LoopMeVideoClient.m */; };
-		474D67641F42EEB100F4B916 /* LoopMeJSCommunicatorProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 474D67021F42EEB100F4B916 /* LoopMeJSCommunicatorProtocol.h */; };
-		474D67651F42EEB100F4B916 /* LoopMeVideoCommunicatorProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 474D67031F42EEB100F4B916 /* LoopMeVideoCommunicatorProtocol.h */; };
-		474D67661F42EEB100F4B916 /* LoopMeAdDisplayController.h in Headers */ = {isa = PBXBuildFile; fileRef = 474D67051F42EEB100F4B916 /* LoopMeAdDisplayController.h */; };
-		474D67671F42EEB100F4B916 /* LoopMeAdDisplayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 474D67061F42EEB100F4B916 /* LoopMeAdDisplayController.m */; };
-		474D67681F42EEB100F4B916 /* LoopMeDestinationDisplayController.h in Headers */ = {isa = PBXBuildFile; fileRef = 474D67071F42EEB100F4B916 /* LoopMeDestinationDisplayController.h */; };
-		474D67691F42EEB100F4B916 /* LoopMeDestinationDisplayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 474D67081F42EEB100F4B916 /* LoopMeDestinationDisplayController.m */; };
-		474D676A1F42EEB100F4B916 /* LoopMeInterstitial.m in Sources */ = {isa = PBXBuildFile; fileRef = 474D670A1F42EEB100F4B916 /* LoopMeInterstitial.m */; };
-		474D676B1F42EEB100F4B916 /* LoopMeAdConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 474D670C1F42EEB100F4B916 /* LoopMeAdConfiguration.h */; };
-		474D676C1F42EEB100F4B916 /* LoopMeAdConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 474D670D1F42EEB100F4B916 /* LoopMeAdConfiguration.m */; };
-		474D676D1F42EEB100F4B916 /* LoopMeAdManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 474D670E1F42EEB100F4B916 /* LoopMeAdManager.h */; };
-		474D676E1F42EEB100F4B916 /* LoopMeAdManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 474D670F1F42EEB100F4B916 /* LoopMeAdManager.m */; };
-		474D676F1F42EEB100F4B916 /* LoopMeReachability.h in Headers */ = {isa = PBXBuildFile; fileRef = 474D67101F42EEB100F4B916 /* LoopMeReachability.h */; };
-		474D67701F42EEB100F4B916 /* LoopMeReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 474D67111F42EEB100F4B916 /* LoopMeReachability.m */; };
-		474D67711F42EEB100F4B916 /* LoopMeServerCommunicator.h in Headers */ = {isa = PBXBuildFile; fileRef = 474D67121F42EEB100F4B916 /* LoopMeServerCommunicator.h */; };
-		474D67721F42EEB100F4B916 /* LoopMeServerCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 474D67131F42EEB100F4B916 /* LoopMeServerCommunicator.m */; };
-		474D67731F42EEB100F4B916 /* LoopMeURLResolver.h in Headers */ = {isa = PBXBuildFile; fileRef = 474D67141F42EEB100F4B916 /* LoopMeURLResolver.h */; };
-		474D67741F42EEB100F4B916 /* LoopMeURLResolver.m in Sources */ = {isa = PBXBuildFile; fileRef = 474D67151F42EEB100F4B916 /* LoopMeURLResolver.m */; };
-		474D67751F42EEB100F4B916 /* LoopMeVideoManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 474D67161F42EEB100F4B916 /* LoopMeVideoManager.h */; };
-		474D67761F42EEB100F4B916 /* LoopMeVideoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 474D67171F42EEB100F4B916 /* LoopMeVideoManager.m */; };
-		474D67771F42EEB100F4B916 /* LoopMeResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 474D67191F42EEB100F4B916 /* LoopMeResources.bundle */; };
-		474D67781F42EEB100F4B916 /* LoopMeTargeting.m in Sources */ = {isa = PBXBuildFile; fileRef = 474D671B1F42EEB100F4B916 /* LoopMeTargeting.m */; };
-		474D67791F42EEB100F4B916 /* NSData+LoopMeAES128.h in Headers */ = {isa = PBXBuildFile; fileRef = 474D671E1F42EEB100F4B916 /* NSData+LoopMeAES128.h */; };
-		474D677A1F42EEB100F4B916 /* NSData+LoopMeAES128.m in Sources */ = {isa = PBXBuildFile; fileRef = 474D671F1F42EEB100F4B916 /* NSData+LoopMeAES128.m */; };
-		474D677B1F42EEB100F4B916 /* NSString+Encryption.h in Headers */ = {isa = PBXBuildFile; fileRef = 474D67201F42EEB100F4B916 /* NSString+Encryption.h */; };
-		474D677C1F42EEB100F4B916 /* NSString+Encryption.m in Sources */ = {isa = PBXBuildFile; fileRef = 474D67211F42EEB100F4B916 /* NSString+Encryption.m */; };
-		474D677D1F42EEB100F4B916 /* NSURL+LoopMeAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 474D67221F42EEB100F4B916 /* NSURL+LoopMeAdditions.h */; };
-		474D677E1F42EEB100F4B916 /* NSURL+LoopMeAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 474D67231F42EEB100F4B916 /* NSURL+LoopMeAdditions.m */; };
-		474D677F1F42EEB100F4B916 /* UIImage+LoopMeBinaryImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 474D67241F42EEB100F4B916 /* UIImage+LoopMeBinaryImage.h */; };
-		474D67801F42EEB100F4B916 /* UIImage+LoopMeBinaryImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 474D67251F42EEB100F4B916 /* UIImage+LoopMeBinaryImage.m */; };
-		474D67811F42EEB100F4B916 /* LoopMeAnalyticsProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 474D67261F42EEB100F4B916 /* LoopMeAnalyticsProvider.h */; };
-		474D67821F42EEB100F4B916 /* LoopMeAnalyticsProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 474D67271F42EEB100F4B916 /* LoopMeAnalyticsProvider.m */; };
-		474D67831F42EEB100F4B916 /* LoopMeDefinitions.h in Headers */ = {isa = PBXBuildFile; fileRef = 474D67281F42EEB100F4B916 /* LoopMeDefinitions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		474D67841F42EEB100F4B916 /* LoopMeError.h in Headers */ = {isa = PBXBuildFile; fileRef = 474D67291F42EEB100F4B916 /* LoopMeError.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		474D67851F42EEB100F4B916 /* LoopMeError.m in Sources */ = {isa = PBXBuildFile; fileRef = 474D672A1F42EEB100F4B916 /* LoopMeError.m */; };
-		474D67861F42EEB100F4B916 /* LoopMeErrorEventSender.h in Headers */ = {isa = PBXBuildFile; fileRef = 474D672B1F42EEB100F4B916 /* LoopMeErrorEventSender.h */; };
-		474D67871F42EEB100F4B916 /* LoopMeErrorEventSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 474D672C1F42EEB100F4B916 /* LoopMeErrorEventSender.m */; };
-		474D67881F42EEB100F4B916 /* LoopMeGeoLocationProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 474D672D1F42EEB100F4B916 /* LoopMeGeoLocationProvider.h */; };
-		474D67891F42EEB100F4B916 /* LoopMeGeoLocationProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 474D672E1F42EEB100F4B916 /* LoopMeGeoLocationProvider.m */; };
-		474D678A1F42EEB100F4B916 /* LoopMeGlobalSettings.h in Headers */ = {isa = PBXBuildFile; fileRef = 474D672F1F42EEB100F4B916 /* LoopMeGlobalSettings.h */; };
-		474D678B1F42EEB100F4B916 /* LoopMeGlobalSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 474D67301F42EEB100F4B916 /* LoopMeGlobalSettings.m */; };
-		474D678C1F42EEB100F4B916 /* LoopMeIdentityProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 474D67311F42EEB100F4B916 /* LoopMeIdentityProvider.h */; };
-		474D678D1F42EEB100F4B916 /* LoopMeIdentityProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 474D67321F42EEB100F4B916 /* LoopMeIdentityProvider.m */; };
-		474D678E1F42EEB100F4B916 /* LoopMeLogging.h in Headers */ = {isa = PBXBuildFile; fileRef = 474D67331F42EEB100F4B916 /* LoopMeLogging.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		474D678F1F42EEB100F4B916 /* LoopMeLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 474D67341F42EEB100F4B916 /* LoopMeLogging.m */; };
-		474D67901F42EEB100F4B916 /* LoopMe360ViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 474D67371F42EEB100F4B916 /* LoopMe360ViewController.h */; };
-		474D67911F42EEB100F4B916 /* LoopMe360ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 474D67381F42EEB100F4B916 /* LoopMe360ViewController.m */; };
-		474D67921F42EEB100F4B916 /* LoopMeGLProgram.h in Headers */ = {isa = PBXBuildFile; fileRef = 474D673A1F42EEB100F4B916 /* LoopMeGLProgram.h */; };
-		474D67931F42EEB100F4B916 /* LoopMeGLProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = 474D673B1F42EEB100F4B916 /* LoopMeGLProgram.m */; };
-		474D67941F42EEB100F4B916 /* LoopMeInterstitialViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 474D673D1F42EEB100F4B916 /* LoopMeInterstitialViewController.h */; };
-		474D67951F42EEB100F4B916 /* LoopMeInterstitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 474D673E1F42EEB100F4B916 /* LoopMeInterstitialViewController.m */; };
-		474D67961F42EEB100F4B916 /* LoopMeBrowserViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 474D67401F42EEB100F4B916 /* LoopMeBrowserViewController.h */; };
-		474D67971F42EEB100F4B916 /* LoopMeBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 474D67411F42EEB100F4B916 /* LoopMeBrowserViewController.m */; };
-		474D67981F42EEB100F4B916 /* LoopMeBackView.h in Headers */ = {isa = PBXBuildFile; fileRef = 474D67431F42EEB100F4B916 /* LoopMeBackView.h */; };
-		474D67991F42EEB100F4B916 /* LoopMeBackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 474D67441F42EEB100F4B916 /* LoopMeBackView.m */; };
-		474D679A1F42EEB100F4B916 /* LoopMeCancelView.h in Headers */ = {isa = PBXBuildFile; fileRef = 474D67451F42EEB100F4B916 /* LoopMeCancelView.h */; };
-		474D679B1F42EEB100F4B916 /* LoopMeCancelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 474D67461F42EEB100F4B916 /* LoopMeCancelView.m */; };
-		474D679C1F42EEB100F4B916 /* LoopMeCloseButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 474D67471F42EEB100F4B916 /* LoopMeCloseButton.h */; };
-		474D679D1F42EEB100F4B916 /* LoopMeCloseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 474D67481F42EEB100F4B916 /* LoopMeCloseButton.m */; };
-		474D679E1F42EEB100F4B916 /* LoopMeActivityIndicatorView.h in Headers */ = {isa = PBXBuildFile; fileRef = 474D674A1F42EEB100F4B916 /* LoopMeActivityIndicatorView.h */; };
-		474D679F1F42EEB100F4B916 /* LoopMeActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 474D674B1F42EEB100F4B916 /* LoopMeActivityIndicatorView.m */; };
-		474D67A01F42EEB100F4B916 /* LoopMeProgressOverlayView.h in Headers */ = {isa = PBXBuildFile; fileRef = 474D674C1F42EEB100F4B916 /* LoopMeProgressOverlayView.h */; };
-		474D67A11F42EEB100F4B916 /* LoopMeProgressOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 474D674D1F42EEB100F4B916 /* LoopMeProgressOverlayView.m */; };
-		474D67A21F42EEB100F4B916 /* LoopMeAdWebView.h in Headers */ = {isa = PBXBuildFile; fileRef = 474D674F1F42EEB100F4B916 /* LoopMeAdWebView.h */; };
-		474D67A31F42EEB100F4B916 /* LoopMeAdWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 474D67501F42EEB100F4B916 /* LoopMeAdWebView.m */; };
-		474D67A51F42EEB100F4B916 /* LoopMeAdView.h in Headers */ = {isa = PBXBuildFile; fileRef = 474D67521F42EEB100F4B916 /* LoopMeAdView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		474D67A61F42EEB100F4B916 /* LoopMeInterstitial.h in Headers */ = {isa = PBXBuildFile; fileRef = 474D67531F42EEB100F4B916 /* LoopMeInterstitial.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		474D67A71F42EEB100F4B916 /* LoopMeSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 474D67541F42EEB100F4B916 /* LoopMeSDK.h */; };
-		474D67A81F42EEB100F4B916 /* LoopMeTargeting.h in Headers */ = {isa = PBXBuildFile; fileRef = 474D67551F42EEB100F4B916 /* LoopMeTargeting.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		474D67A91F42EF0400F4B916 /* LOOMoatMobileAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 474D67511F42EEB100F4B916 /* LOOMoatMobileAppKit.framework */; };
+		4798C9761F59986500B3A947 /* LoopMeAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4798C90D1F59986500B3A947 /* LoopMeAdView.m */; };
+		4798C9771F59986500B3A947 /* LoopMeMaximizedViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4798C90F1F59986500B3A947 /* LoopMeMaximizedViewController.h */; };
+		4798C9781F59986500B3A947 /* LoopMeMaximizedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4798C9101F59986500B3A947 /* LoopMeMaximizedViewController.m */; };
+		4798C9791F59986500B3A947 /* LoopMeMinimizedAdView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4798C9121F59986500B3A947 /* LoopMeMinimizedAdView.h */; };
+		4798C97A1F59986500B3A947 /* LoopMeMinimizedAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4798C9131F59986500B3A947 /* LoopMeMinimizedAdView.m */; };
+		4798C97B1F59986500B3A947 /* LoopMeServerURLBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 4798C9151F59986500B3A947 /* LoopMeServerURLBuilder.h */; };
+		4798C97C1F59986500B3A947 /* LoopMeServerURLBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 4798C9161F59986500B3A947 /* LoopMeServerURLBuilder.m */; };
+		4798C97D1F59986500B3A947 /* LoopMeJSClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 4798C9181F59986500B3A947 /* LoopMeJSClient.h */; };
+		4798C97E1F59986500B3A947 /* LoopMeJSClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4798C9191F59986500B3A947 /* LoopMeJSClient.m */; };
+		4798C97F1F59986500B3A947 /* LoopMeMRAIDClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 4798C91A1F59986500B3A947 /* LoopMeMRAIDClient.h */; };
+		4798C9801F59986500B3A947 /* LoopMeMRAIDClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4798C91B1F59986500B3A947 /* LoopMeMRAIDClient.m */; };
+		4798C9811F59986500B3A947 /* LoopMeVideoClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 4798C91C1F59986500B3A947 /* LoopMeVideoClient.h */; };
+		4798C9821F59986500B3A947 /* LoopMeVideoClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4798C91D1F59986500B3A947 /* LoopMeVideoClient.m */; };
+		4798C9831F59986500B3A947 /* LoopMeJSCommunicatorProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 4798C91F1F59986500B3A947 /* LoopMeJSCommunicatorProtocol.h */; };
+		4798C9841F59986500B3A947 /* LoopMeVideoCommunicatorProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 4798C9201F59986500B3A947 /* LoopMeVideoCommunicatorProtocol.h */; };
+		4798C9851F59986500B3A947 /* LoopMeAdDisplayController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4798C9221F59986500B3A947 /* LoopMeAdDisplayController.h */; };
+		4798C9861F59986500B3A947 /* LoopMeAdDisplayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4798C9231F59986500B3A947 /* LoopMeAdDisplayController.m */; };
+		4798C9871F59986500B3A947 /* LoopMeDestinationDisplayController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4798C9241F59986500B3A947 /* LoopMeDestinationDisplayController.h */; };
+		4798C9881F59986500B3A947 /* LoopMeDestinationDisplayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4798C9251F59986500B3A947 /* LoopMeDestinationDisplayController.m */; };
+		4798C9891F59986500B3A947 /* LoopMeInterstitial.m in Sources */ = {isa = PBXBuildFile; fileRef = 4798C9271F59986500B3A947 /* LoopMeInterstitial.m */; };
+		4798C98A1F59986500B3A947 /* LoopMeInterstitialGeneral.h in Headers */ = {isa = PBXBuildFile; fileRef = 4798C9281F59986500B3A947 /* LoopMeInterstitialGeneral.h */; };
+		4798C98B1F59986500B3A947 /* LoopMeInterstitialGeneral.m in Sources */ = {isa = PBXBuildFile; fileRef = 4798C9291F59986500B3A947 /* LoopMeInterstitialGeneral.m */; };
+		4798C98C1F59986500B3A947 /* LoopMeAdConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 4798C92B1F59986500B3A947 /* LoopMeAdConfiguration.h */; };
+		4798C98D1F59986500B3A947 /* LoopMeAdConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 4798C92C1F59986500B3A947 /* LoopMeAdConfiguration.m */; };
+		4798C98E1F59986500B3A947 /* LoopMeAdManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 4798C92D1F59986500B3A947 /* LoopMeAdManager.h */; };
+		4798C98F1F59986500B3A947 /* LoopMeAdManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4798C92E1F59986500B3A947 /* LoopMeAdManager.m */; };
+		4798C9901F59986500B3A947 /* LoopMeReachability.h in Headers */ = {isa = PBXBuildFile; fileRef = 4798C92F1F59986500B3A947 /* LoopMeReachability.h */; };
+		4798C9911F59986500B3A947 /* LoopMeReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 4798C9301F59986500B3A947 /* LoopMeReachability.m */; };
+		4798C9921F59986500B3A947 /* LoopMeServerCommunicator.h in Headers */ = {isa = PBXBuildFile; fileRef = 4798C9311F59986500B3A947 /* LoopMeServerCommunicator.h */; };
+		4798C9931F59986500B3A947 /* LoopMeServerCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4798C9321F59986500B3A947 /* LoopMeServerCommunicator.m */; };
+		4798C9941F59986500B3A947 /* LoopMeURLResolver.h in Headers */ = {isa = PBXBuildFile; fileRef = 4798C9331F59986500B3A947 /* LoopMeURLResolver.h */; };
+		4798C9951F59986500B3A947 /* LoopMeURLResolver.m in Sources */ = {isa = PBXBuildFile; fileRef = 4798C9341F59986500B3A947 /* LoopMeURLResolver.m */; };
+		4798C9961F59986500B3A947 /* LoopMeVideoManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 4798C9351F59986500B3A947 /* LoopMeVideoManager.h */; };
+		4798C9971F59986500B3A947 /* LoopMeVideoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4798C9361F59986500B3A947 /* LoopMeVideoManager.m */; };
+		4798C9981F59986500B3A947 /* LoopMeResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4798C9381F59986500B3A947 /* LoopMeResources.bundle */; };
+		4798C9991F59986500B3A947 /* LoopMeTargeting.m in Sources */ = {isa = PBXBuildFile; fileRef = 4798C93A1F59986500B3A947 /* LoopMeTargeting.m */; };
+		4798C99A1F59986500B3A947 /* NSData+LoopMeAES128.h in Headers */ = {isa = PBXBuildFile; fileRef = 4798C93D1F59986500B3A947 /* NSData+LoopMeAES128.h */; };
+		4798C99B1F59986500B3A947 /* NSData+LoopMeAES128.m in Sources */ = {isa = PBXBuildFile; fileRef = 4798C93E1F59986500B3A947 /* NSData+LoopMeAES128.m */; };
+		4798C99C1F59986500B3A947 /* NSString+Encryption.h in Headers */ = {isa = PBXBuildFile; fileRef = 4798C93F1F59986500B3A947 /* NSString+Encryption.h */; };
+		4798C99D1F59986500B3A947 /* NSString+Encryption.m in Sources */ = {isa = PBXBuildFile; fileRef = 4798C9401F59986500B3A947 /* NSString+Encryption.m */; };
+		4798C99E1F59986500B3A947 /* NSURL+LoopMeAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 4798C9411F59986500B3A947 /* NSURL+LoopMeAdditions.h */; };
+		4798C99F1F59986500B3A947 /* NSURL+LoopMeAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4798C9421F59986500B3A947 /* NSURL+LoopMeAdditions.m */; };
+		4798C9A01F59986500B3A947 /* UIImage+LoopMeBinaryImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 4798C9431F59986500B3A947 /* UIImage+LoopMeBinaryImage.h */; };
+		4798C9A11F59986500B3A947 /* UIImage+LoopMeBinaryImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4798C9441F59986500B3A947 /* UIImage+LoopMeBinaryImage.m */; };
+		4798C9A21F59986500B3A947 /* LoopMeAnalyticsProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 4798C9451F59986500B3A947 /* LoopMeAnalyticsProvider.h */; };
+		4798C9A31F59986500B3A947 /* LoopMeAnalyticsProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 4798C9461F59986500B3A947 /* LoopMeAnalyticsProvider.m */; };
+		4798C9A41F59986500B3A947 /* LoopMeDefinitions.h in Headers */ = {isa = PBXBuildFile; fileRef = 4798C9471F59986500B3A947 /* LoopMeDefinitions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4798C9A51F59986500B3A947 /* LoopMeError.h in Headers */ = {isa = PBXBuildFile; fileRef = 4798C9481F59986500B3A947 /* LoopMeError.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4798C9A61F59986500B3A947 /* LoopMeError.m in Sources */ = {isa = PBXBuildFile; fileRef = 4798C9491F59986500B3A947 /* LoopMeError.m */; };
+		4798C9A71F59986500B3A947 /* LoopMeErrorEventSender.h in Headers */ = {isa = PBXBuildFile; fileRef = 4798C94A1F59986500B3A947 /* LoopMeErrorEventSender.h */; };
+		4798C9A81F59986500B3A947 /* LoopMeErrorEventSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 4798C94B1F59986500B3A947 /* LoopMeErrorEventSender.m */; };
+		4798C9A91F59986500B3A947 /* LoopMeGeoLocationProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 4798C94C1F59986500B3A947 /* LoopMeGeoLocationProvider.h */; };
+		4798C9AA1F59986500B3A947 /* LoopMeGeoLocationProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 4798C94D1F59986500B3A947 /* LoopMeGeoLocationProvider.m */; };
+		4798C9AB1F59986500B3A947 /* LoopMeGlobalSettings.h in Headers */ = {isa = PBXBuildFile; fileRef = 4798C94E1F59986500B3A947 /* LoopMeGlobalSettings.h */; };
+		4798C9AC1F59986500B3A947 /* LoopMeGlobalSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 4798C94F1F59986500B3A947 /* LoopMeGlobalSettings.m */; };
+		4798C9AD1F59986500B3A947 /* LoopMeIdentityProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 4798C9501F59986500B3A947 /* LoopMeIdentityProvider.h */; };
+		4798C9AE1F59986500B3A947 /* LoopMeIdentityProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 4798C9511F59986500B3A947 /* LoopMeIdentityProvider.m */; };
+		4798C9AF1F59986500B3A947 /* LoopMeLogging.h in Headers */ = {isa = PBXBuildFile; fileRef = 4798C9521F59986500B3A947 /* LoopMeLogging.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4798C9B01F59986500B3A947 /* LoopMeLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 4798C9531F59986500B3A947 /* LoopMeLogging.m */; };
+		4798C9B11F59986500B3A947 /* LoopMe360ViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4798C9561F59986500B3A947 /* LoopMe360ViewController.h */; };
+		4798C9B21F59986500B3A947 /* LoopMe360ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4798C9571F59986500B3A947 /* LoopMe360ViewController.m */; };
+		4798C9B31F59986500B3A947 /* LoopMeGLProgram.h in Headers */ = {isa = PBXBuildFile; fileRef = 4798C9591F59986500B3A947 /* LoopMeGLProgram.h */; };
+		4798C9B41F59986500B3A947 /* LoopMeGLProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = 4798C95A1F59986500B3A947 /* LoopMeGLProgram.m */; };
+		4798C9B51F59986500B3A947 /* LoopMeInterstitialViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4798C95C1F59986500B3A947 /* LoopMeInterstitialViewController.h */; };
+		4798C9B61F59986500B3A947 /* LoopMeInterstitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4798C95D1F59986500B3A947 /* LoopMeInterstitialViewController.m */; };
+		4798C9B71F59986500B3A947 /* LoopMeBrowserViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4798C95F1F59986500B3A947 /* LoopMeBrowserViewController.h */; };
+		4798C9B81F59986500B3A947 /* LoopMeBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4798C9601F59986500B3A947 /* LoopMeBrowserViewController.m */; };
+		4798C9B91F59986500B3A947 /* LoopMeBackView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4798C9621F59986500B3A947 /* LoopMeBackView.h */; };
+		4798C9BA1F59986500B3A947 /* LoopMeBackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4798C9631F59986500B3A947 /* LoopMeBackView.m */; };
+		4798C9BB1F59986500B3A947 /* LoopMeCancelView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4798C9641F59986500B3A947 /* LoopMeCancelView.h */; };
+		4798C9BC1F59986500B3A947 /* LoopMeCancelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4798C9651F59986500B3A947 /* LoopMeCancelView.m */; };
+		4798C9BD1F59986500B3A947 /* LoopMeCloseButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 4798C9661F59986500B3A947 /* LoopMeCloseButton.h */; };
+		4798C9BE1F59986500B3A947 /* LoopMeCloseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4798C9671F59986500B3A947 /* LoopMeCloseButton.m */; };
+		4798C9BF1F59986500B3A947 /* LoopMeActivityIndicatorView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4798C9691F59986500B3A947 /* LoopMeActivityIndicatorView.h */; };
+		4798C9C01F59986500B3A947 /* LoopMeActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4798C96A1F59986500B3A947 /* LoopMeActivityIndicatorView.m */; };
+		4798C9C11F59986500B3A947 /* LoopMeProgressOverlayView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4798C96B1F59986500B3A947 /* LoopMeProgressOverlayView.h */; };
+		4798C9C21F59986500B3A947 /* LoopMeProgressOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4798C96C1F59986500B3A947 /* LoopMeProgressOverlayView.m */; };
+		4798C9C31F59986500B3A947 /* LoopMeAdWebView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4798C96E1F59986500B3A947 /* LoopMeAdWebView.h */; };
+		4798C9C41F59986500B3A947 /* LoopMeAdWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4798C96F1F59986500B3A947 /* LoopMeAdWebView.m */; };
+		4798C9C51F59986500B3A947 /* LoopMeAdView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4798C9701F59986500B3A947 /* LoopMeAdView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4798C9C61F59986500B3A947 /* LoopMeInterstitial.h in Headers */ = {isa = PBXBuildFile; fileRef = 4798C9711F59986500B3A947 /* LoopMeInterstitial.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4798C9C71F59986500B3A947 /* LoopMeSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 4798C9721F59986500B3A947 /* LoopMeSDK.h */; };
+		4798C9C81F59986500B3A947 /* LoopMeTargeting.h in Headers */ = {isa = PBXBuildFile; fileRef = 4798C9731F59986500B3A947 /* LoopMeTargeting.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4798C9C91F59986500B3A947 /* LOOMoatMobileAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4798C9751F59986500B3A947 /* LOOMoatMobileAppKit.framework */; };
 		D003B2701AFB9C3D007C7E0F /* LoopMeCompiler-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = D003B26E1AFB9C3D007C7E0F /* LoopMeCompiler-Prefix.pch */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		474D66F01F42EEB100F4B916 /* LoopMeAdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeAdView.m; sourceTree = "<group>"; };
-		474D66F21F42EEB100F4B916 /* LoopMeMaximizedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeMaximizedViewController.h; sourceTree = "<group>"; };
-		474D66F31F42EEB100F4B916 /* LoopMeMaximizedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeMaximizedViewController.m; sourceTree = "<group>"; };
-		474D66F51F42EEB100F4B916 /* LoopMeMinimizedAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeMinimizedAdView.h; sourceTree = "<group>"; };
-		474D66F61F42EEB100F4B916 /* LoopMeMinimizedAdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeMinimizedAdView.m; sourceTree = "<group>"; };
-		474D66F81F42EEB100F4B916 /* LoopMeServerURLBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeServerURLBuilder.h; sourceTree = "<group>"; };
-		474D66F91F42EEB100F4B916 /* LoopMeServerURLBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeServerURLBuilder.m; sourceTree = "<group>"; };
-		474D66FB1F42EEB100F4B916 /* LoopMeJSClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeJSClient.h; sourceTree = "<group>"; };
-		474D66FC1F42EEB100F4B916 /* LoopMeJSClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeJSClient.m; sourceTree = "<group>"; };
-		474D66FD1F42EEB100F4B916 /* LoopMeMRAIDClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeMRAIDClient.h; sourceTree = "<group>"; };
-		474D66FE1F42EEB100F4B916 /* LoopMeMRAIDClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeMRAIDClient.m; sourceTree = "<group>"; };
-		474D66FF1F42EEB100F4B916 /* LoopMeVideoClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeVideoClient.h; sourceTree = "<group>"; };
-		474D67001F42EEB100F4B916 /* LoopMeVideoClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeVideoClient.m; sourceTree = "<group>"; };
-		474D67021F42EEB100F4B916 /* LoopMeJSCommunicatorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeJSCommunicatorProtocol.h; sourceTree = "<group>"; };
-		474D67031F42EEB100F4B916 /* LoopMeVideoCommunicatorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeVideoCommunicatorProtocol.h; sourceTree = "<group>"; };
-		474D67051F42EEB100F4B916 /* LoopMeAdDisplayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeAdDisplayController.h; sourceTree = "<group>"; };
-		474D67061F42EEB100F4B916 /* LoopMeAdDisplayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeAdDisplayController.m; sourceTree = "<group>"; };
-		474D67071F42EEB100F4B916 /* LoopMeDestinationDisplayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeDestinationDisplayController.h; sourceTree = "<group>"; };
-		474D67081F42EEB100F4B916 /* LoopMeDestinationDisplayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeDestinationDisplayController.m; sourceTree = "<group>"; };
-		474D670A1F42EEB100F4B916 /* LoopMeInterstitial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeInterstitial.m; sourceTree = "<group>"; };
-		474D670C1F42EEB100F4B916 /* LoopMeAdConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeAdConfiguration.h; sourceTree = "<group>"; };
-		474D670D1F42EEB100F4B916 /* LoopMeAdConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeAdConfiguration.m; sourceTree = "<group>"; };
-		474D670E1F42EEB100F4B916 /* LoopMeAdManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeAdManager.h; sourceTree = "<group>"; };
-		474D670F1F42EEB100F4B916 /* LoopMeAdManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeAdManager.m; sourceTree = "<group>"; };
-		474D67101F42EEB100F4B916 /* LoopMeReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeReachability.h; sourceTree = "<group>"; };
-		474D67111F42EEB100F4B916 /* LoopMeReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeReachability.m; sourceTree = "<group>"; };
-		474D67121F42EEB100F4B916 /* LoopMeServerCommunicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeServerCommunicator.h; sourceTree = "<group>"; };
-		474D67131F42EEB100F4B916 /* LoopMeServerCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeServerCommunicator.m; sourceTree = "<group>"; };
-		474D67141F42EEB100F4B916 /* LoopMeURLResolver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeURLResolver.h; sourceTree = "<group>"; };
-		474D67151F42EEB100F4B916 /* LoopMeURLResolver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeURLResolver.m; sourceTree = "<group>"; };
-		474D67161F42EEB100F4B916 /* LoopMeVideoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeVideoManager.h; sourceTree = "<group>"; };
-		474D67171F42EEB100F4B916 /* LoopMeVideoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeVideoManager.m; sourceTree = "<group>"; };
-		474D67191F42EEB100F4B916 /* LoopMeResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = LoopMeResources.bundle; sourceTree = "<group>"; };
-		474D671B1F42EEB100F4B916 /* LoopMeTargeting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeTargeting.m; sourceTree = "<group>"; };
-		474D671E1F42EEB100F4B916 /* NSData+LoopMeAES128.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+LoopMeAES128.h"; sourceTree = "<group>"; };
-		474D671F1F42EEB100F4B916 /* NSData+LoopMeAES128.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+LoopMeAES128.m"; sourceTree = "<group>"; };
-		474D67201F42EEB100F4B916 /* NSString+Encryption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Encryption.h"; sourceTree = "<group>"; };
-		474D67211F42EEB100F4B916 /* NSString+Encryption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Encryption.m"; sourceTree = "<group>"; };
-		474D67221F42EEB100F4B916 /* NSURL+LoopMeAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+LoopMeAdditions.h"; sourceTree = "<group>"; };
-		474D67231F42EEB100F4B916 /* NSURL+LoopMeAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+LoopMeAdditions.m"; sourceTree = "<group>"; };
-		474D67241F42EEB100F4B916 /* UIImage+LoopMeBinaryImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+LoopMeBinaryImage.h"; sourceTree = "<group>"; };
-		474D67251F42EEB100F4B916 /* UIImage+LoopMeBinaryImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+LoopMeBinaryImage.m"; sourceTree = "<group>"; };
-		474D67261F42EEB100F4B916 /* LoopMeAnalyticsProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeAnalyticsProvider.h; sourceTree = "<group>"; };
-		474D67271F42EEB100F4B916 /* LoopMeAnalyticsProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeAnalyticsProvider.m; sourceTree = "<group>"; };
-		474D67281F42EEB100F4B916 /* LoopMeDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeDefinitions.h; sourceTree = "<group>"; };
-		474D67291F42EEB100F4B916 /* LoopMeError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeError.h; sourceTree = "<group>"; };
-		474D672A1F42EEB100F4B916 /* LoopMeError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeError.m; sourceTree = "<group>"; };
-		474D672B1F42EEB100F4B916 /* LoopMeErrorEventSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeErrorEventSender.h; sourceTree = "<group>"; };
-		474D672C1F42EEB100F4B916 /* LoopMeErrorEventSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeErrorEventSender.m; sourceTree = "<group>"; };
-		474D672D1F42EEB100F4B916 /* LoopMeGeoLocationProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeGeoLocationProvider.h; sourceTree = "<group>"; };
-		474D672E1F42EEB100F4B916 /* LoopMeGeoLocationProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeGeoLocationProvider.m; sourceTree = "<group>"; };
-		474D672F1F42EEB100F4B916 /* LoopMeGlobalSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeGlobalSettings.h; sourceTree = "<group>"; };
-		474D67301F42EEB100F4B916 /* LoopMeGlobalSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeGlobalSettings.m; sourceTree = "<group>"; };
-		474D67311F42EEB100F4B916 /* LoopMeIdentityProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeIdentityProvider.h; sourceTree = "<group>"; };
-		474D67321F42EEB100F4B916 /* LoopMeIdentityProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeIdentityProvider.m; sourceTree = "<group>"; };
-		474D67331F42EEB100F4B916 /* LoopMeLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeLogging.h; sourceTree = "<group>"; };
-		474D67341F42EEB100F4B916 /* LoopMeLogging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeLogging.m; sourceTree = "<group>"; };
-		474D67371F42EEB100F4B916 /* LoopMe360ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMe360ViewController.h; sourceTree = "<group>"; };
-		474D67381F42EEB100F4B916 /* LoopMe360ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMe360ViewController.m; sourceTree = "<group>"; };
-		474D673A1F42EEB100F4B916 /* LoopMeGLProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeGLProgram.h; sourceTree = "<group>"; };
-		474D673B1F42EEB100F4B916 /* LoopMeGLProgram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeGLProgram.m; sourceTree = "<group>"; };
-		474D673D1F42EEB100F4B916 /* LoopMeInterstitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeInterstitialViewController.h; sourceTree = "<group>"; };
-		474D673E1F42EEB100F4B916 /* LoopMeInterstitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeInterstitialViewController.m; sourceTree = "<group>"; };
-		474D67401F42EEB100F4B916 /* LoopMeBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeBrowserViewController.h; sourceTree = "<group>"; };
-		474D67411F42EEB100F4B916 /* LoopMeBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeBrowserViewController.m; sourceTree = "<group>"; };
-		474D67431F42EEB100F4B916 /* LoopMeBackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeBackView.h; sourceTree = "<group>"; };
-		474D67441F42EEB100F4B916 /* LoopMeBackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeBackView.m; sourceTree = "<group>"; };
-		474D67451F42EEB100F4B916 /* LoopMeCancelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeCancelView.h; sourceTree = "<group>"; };
-		474D67461F42EEB100F4B916 /* LoopMeCancelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeCancelView.m; sourceTree = "<group>"; };
-		474D67471F42EEB100F4B916 /* LoopMeCloseButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeCloseButton.h; sourceTree = "<group>"; };
-		474D67481F42EEB100F4B916 /* LoopMeCloseButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeCloseButton.m; sourceTree = "<group>"; };
-		474D674A1F42EEB100F4B916 /* LoopMeActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeActivityIndicatorView.h; sourceTree = "<group>"; };
-		474D674B1F42EEB100F4B916 /* LoopMeActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeActivityIndicatorView.m; sourceTree = "<group>"; };
-		474D674C1F42EEB100F4B916 /* LoopMeProgressOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeProgressOverlayView.h; sourceTree = "<group>"; };
-		474D674D1F42EEB100F4B916 /* LoopMeProgressOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeProgressOverlayView.m; sourceTree = "<group>"; };
-		474D674F1F42EEB100F4B916 /* LoopMeAdWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeAdWebView.h; sourceTree = "<group>"; };
-		474D67501F42EEB100F4B916 /* LoopMeAdWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeAdWebView.m; sourceTree = "<group>"; };
-		474D67511F42EEB100F4B916 /* LOOMoatMobileAppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LOOMoatMobileAppKit.framework; sourceTree = "<group>"; };
-		474D67521F42EEB100F4B916 /* LoopMeAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeAdView.h; sourceTree = "<group>"; };
-		474D67531F42EEB100F4B916 /* LoopMeInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeInterstitial.h; sourceTree = "<group>"; };
-		474D67541F42EEB100F4B916 /* LoopMeSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeSDK.h; sourceTree = "<group>"; };
-		474D67551F42EEB100F4B916 /* LoopMeTargeting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeTargeting.h; sourceTree = "<group>"; };
+		4798C90D1F59986500B3A947 /* LoopMeAdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeAdView.m; sourceTree = "<group>"; };
+		4798C90F1F59986500B3A947 /* LoopMeMaximizedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeMaximizedViewController.h; sourceTree = "<group>"; };
+		4798C9101F59986500B3A947 /* LoopMeMaximizedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeMaximizedViewController.m; sourceTree = "<group>"; };
+		4798C9121F59986500B3A947 /* LoopMeMinimizedAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeMinimizedAdView.h; sourceTree = "<group>"; };
+		4798C9131F59986500B3A947 /* LoopMeMinimizedAdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeMinimizedAdView.m; sourceTree = "<group>"; };
+		4798C9151F59986500B3A947 /* LoopMeServerURLBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeServerURLBuilder.h; sourceTree = "<group>"; };
+		4798C9161F59986500B3A947 /* LoopMeServerURLBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeServerURLBuilder.m; sourceTree = "<group>"; };
+		4798C9181F59986500B3A947 /* LoopMeJSClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeJSClient.h; sourceTree = "<group>"; };
+		4798C9191F59986500B3A947 /* LoopMeJSClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeJSClient.m; sourceTree = "<group>"; };
+		4798C91A1F59986500B3A947 /* LoopMeMRAIDClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeMRAIDClient.h; sourceTree = "<group>"; };
+		4798C91B1F59986500B3A947 /* LoopMeMRAIDClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeMRAIDClient.m; sourceTree = "<group>"; };
+		4798C91C1F59986500B3A947 /* LoopMeVideoClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeVideoClient.h; sourceTree = "<group>"; };
+		4798C91D1F59986500B3A947 /* LoopMeVideoClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeVideoClient.m; sourceTree = "<group>"; };
+		4798C91F1F59986500B3A947 /* LoopMeJSCommunicatorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeJSCommunicatorProtocol.h; sourceTree = "<group>"; };
+		4798C9201F59986500B3A947 /* LoopMeVideoCommunicatorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeVideoCommunicatorProtocol.h; sourceTree = "<group>"; };
+		4798C9221F59986500B3A947 /* LoopMeAdDisplayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeAdDisplayController.h; sourceTree = "<group>"; };
+		4798C9231F59986500B3A947 /* LoopMeAdDisplayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeAdDisplayController.m; sourceTree = "<group>"; };
+		4798C9241F59986500B3A947 /* LoopMeDestinationDisplayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeDestinationDisplayController.h; sourceTree = "<group>"; };
+		4798C9251F59986500B3A947 /* LoopMeDestinationDisplayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeDestinationDisplayController.m; sourceTree = "<group>"; };
+		4798C9271F59986500B3A947 /* LoopMeInterstitial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeInterstitial.m; sourceTree = "<group>"; };
+		4798C9281F59986500B3A947 /* LoopMeInterstitialGeneral.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeInterstitialGeneral.h; sourceTree = "<group>"; };
+		4798C9291F59986500B3A947 /* LoopMeInterstitialGeneral.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeInterstitialGeneral.m; sourceTree = "<group>"; };
+		4798C92B1F59986500B3A947 /* LoopMeAdConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeAdConfiguration.h; sourceTree = "<group>"; };
+		4798C92C1F59986500B3A947 /* LoopMeAdConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeAdConfiguration.m; sourceTree = "<group>"; };
+		4798C92D1F59986500B3A947 /* LoopMeAdManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeAdManager.h; sourceTree = "<group>"; };
+		4798C92E1F59986500B3A947 /* LoopMeAdManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeAdManager.m; sourceTree = "<group>"; };
+		4798C92F1F59986500B3A947 /* LoopMeReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeReachability.h; sourceTree = "<group>"; };
+		4798C9301F59986500B3A947 /* LoopMeReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeReachability.m; sourceTree = "<group>"; };
+		4798C9311F59986500B3A947 /* LoopMeServerCommunicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeServerCommunicator.h; sourceTree = "<group>"; };
+		4798C9321F59986500B3A947 /* LoopMeServerCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeServerCommunicator.m; sourceTree = "<group>"; };
+		4798C9331F59986500B3A947 /* LoopMeURLResolver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeURLResolver.h; sourceTree = "<group>"; };
+		4798C9341F59986500B3A947 /* LoopMeURLResolver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeURLResolver.m; sourceTree = "<group>"; };
+		4798C9351F59986500B3A947 /* LoopMeVideoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeVideoManager.h; sourceTree = "<group>"; };
+		4798C9361F59986500B3A947 /* LoopMeVideoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeVideoManager.m; sourceTree = "<group>"; };
+		4798C9381F59986500B3A947 /* LoopMeResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = LoopMeResources.bundle; sourceTree = "<group>"; };
+		4798C93A1F59986500B3A947 /* LoopMeTargeting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeTargeting.m; sourceTree = "<group>"; };
+		4798C93D1F59986500B3A947 /* NSData+LoopMeAES128.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+LoopMeAES128.h"; sourceTree = "<group>"; };
+		4798C93E1F59986500B3A947 /* NSData+LoopMeAES128.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+LoopMeAES128.m"; sourceTree = "<group>"; };
+		4798C93F1F59986500B3A947 /* NSString+Encryption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Encryption.h"; sourceTree = "<group>"; };
+		4798C9401F59986500B3A947 /* NSString+Encryption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Encryption.m"; sourceTree = "<group>"; };
+		4798C9411F59986500B3A947 /* NSURL+LoopMeAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+LoopMeAdditions.h"; sourceTree = "<group>"; };
+		4798C9421F59986500B3A947 /* NSURL+LoopMeAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+LoopMeAdditions.m"; sourceTree = "<group>"; };
+		4798C9431F59986500B3A947 /* UIImage+LoopMeBinaryImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+LoopMeBinaryImage.h"; sourceTree = "<group>"; };
+		4798C9441F59986500B3A947 /* UIImage+LoopMeBinaryImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+LoopMeBinaryImage.m"; sourceTree = "<group>"; };
+		4798C9451F59986500B3A947 /* LoopMeAnalyticsProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeAnalyticsProvider.h; sourceTree = "<group>"; };
+		4798C9461F59986500B3A947 /* LoopMeAnalyticsProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeAnalyticsProvider.m; sourceTree = "<group>"; };
+		4798C9471F59986500B3A947 /* LoopMeDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeDefinitions.h; sourceTree = "<group>"; };
+		4798C9481F59986500B3A947 /* LoopMeError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeError.h; sourceTree = "<group>"; };
+		4798C9491F59986500B3A947 /* LoopMeError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeError.m; sourceTree = "<group>"; };
+		4798C94A1F59986500B3A947 /* LoopMeErrorEventSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeErrorEventSender.h; sourceTree = "<group>"; };
+		4798C94B1F59986500B3A947 /* LoopMeErrorEventSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeErrorEventSender.m; sourceTree = "<group>"; };
+		4798C94C1F59986500B3A947 /* LoopMeGeoLocationProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeGeoLocationProvider.h; sourceTree = "<group>"; };
+		4798C94D1F59986500B3A947 /* LoopMeGeoLocationProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeGeoLocationProvider.m; sourceTree = "<group>"; };
+		4798C94E1F59986500B3A947 /* LoopMeGlobalSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeGlobalSettings.h; sourceTree = "<group>"; };
+		4798C94F1F59986500B3A947 /* LoopMeGlobalSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeGlobalSettings.m; sourceTree = "<group>"; };
+		4798C9501F59986500B3A947 /* LoopMeIdentityProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeIdentityProvider.h; sourceTree = "<group>"; };
+		4798C9511F59986500B3A947 /* LoopMeIdentityProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeIdentityProvider.m; sourceTree = "<group>"; };
+		4798C9521F59986500B3A947 /* LoopMeLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeLogging.h; sourceTree = "<group>"; };
+		4798C9531F59986500B3A947 /* LoopMeLogging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeLogging.m; sourceTree = "<group>"; };
+		4798C9561F59986500B3A947 /* LoopMe360ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMe360ViewController.h; sourceTree = "<group>"; };
+		4798C9571F59986500B3A947 /* LoopMe360ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMe360ViewController.m; sourceTree = "<group>"; };
+		4798C9591F59986500B3A947 /* LoopMeGLProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeGLProgram.h; sourceTree = "<group>"; };
+		4798C95A1F59986500B3A947 /* LoopMeGLProgram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeGLProgram.m; sourceTree = "<group>"; };
+		4798C95C1F59986500B3A947 /* LoopMeInterstitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeInterstitialViewController.h; sourceTree = "<group>"; };
+		4798C95D1F59986500B3A947 /* LoopMeInterstitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeInterstitialViewController.m; sourceTree = "<group>"; };
+		4798C95F1F59986500B3A947 /* LoopMeBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeBrowserViewController.h; sourceTree = "<group>"; };
+		4798C9601F59986500B3A947 /* LoopMeBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeBrowserViewController.m; sourceTree = "<group>"; };
+		4798C9621F59986500B3A947 /* LoopMeBackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeBackView.h; sourceTree = "<group>"; };
+		4798C9631F59986500B3A947 /* LoopMeBackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeBackView.m; sourceTree = "<group>"; };
+		4798C9641F59986500B3A947 /* LoopMeCancelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeCancelView.h; sourceTree = "<group>"; };
+		4798C9651F59986500B3A947 /* LoopMeCancelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeCancelView.m; sourceTree = "<group>"; };
+		4798C9661F59986500B3A947 /* LoopMeCloseButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeCloseButton.h; sourceTree = "<group>"; };
+		4798C9671F59986500B3A947 /* LoopMeCloseButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeCloseButton.m; sourceTree = "<group>"; };
+		4798C9691F59986500B3A947 /* LoopMeActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeActivityIndicatorView.h; sourceTree = "<group>"; };
+		4798C96A1F59986500B3A947 /* LoopMeActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeActivityIndicatorView.m; sourceTree = "<group>"; };
+		4798C96B1F59986500B3A947 /* LoopMeProgressOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeProgressOverlayView.h; sourceTree = "<group>"; };
+		4798C96C1F59986500B3A947 /* LoopMeProgressOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeProgressOverlayView.m; sourceTree = "<group>"; };
+		4798C96E1F59986500B3A947 /* LoopMeAdWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeAdWebView.h; sourceTree = "<group>"; };
+		4798C96F1F59986500B3A947 /* LoopMeAdWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeAdWebView.m; sourceTree = "<group>"; };
+		4798C9701F59986500B3A947 /* LoopMeAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeAdView.h; sourceTree = "<group>"; };
+		4798C9711F59986500B3A947 /* LoopMeInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeInterstitial.h; sourceTree = "<group>"; };
+		4798C9721F59986500B3A947 /* LoopMeSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeSDK.h; sourceTree = "<group>"; };
+		4798C9731F59986500B3A947 /* LoopMeTargeting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeTargeting.h; sourceTree = "<group>"; };
+		4798C9751F59986500B3A947 /* LOOMoatMobileAppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LOOMoatMobileAppKit.framework; sourceTree = "<group>"; };
 		D003B26B1AFB9C2D007C7E0F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = LoopMeCompiler/Info.plist; sourceTree = "<group>"; };
 		D003B26D1AFB9C3D007C7E0F /* LoopMeCompiler-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "LoopMeCompiler-Info.plist"; path = "LoopMeCompiler/LoopMeCompiler-Info.plist"; sourceTree = "<group>"; };
 		D003B26E1AFB9C3D007C7E0F /* LoopMeCompiler-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "LoopMeCompiler-Prefix.pch"; path = "LoopMeCompiler/LoopMeCompiler-Prefix.pch"; sourceTree = "<group>"; };
@@ -186,283 +190,293 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				474D67A91F42EF0400F4B916 /* LOOMoatMobileAppKit.framework in Frameworks */,
+				4798C9C91F59986500B3A947 /* LOOMoatMobileAppKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		474D66EC1F42EEB100F4B916 /* LoopMeSDK Sources */ = {
+		4798C90A1F59986500B3A947 /* LoopMeSDK Sources */ = {
 			isa = PBXGroup;
 			children = (
-				474D66EE1F42EEB100F4B916 /* Internal */,
-				474D67511F42EEB100F4B916 /* LOOMoatMobileAppKit.framework */,
-				474D67521F42EEB100F4B916 /* LoopMeAdView.h */,
-				474D67531F42EEB100F4B916 /* LoopMeInterstitial.h */,
-				474D67541F42EEB100F4B916 /* LoopMeSDK.h */,
-				474D67551F42EEB100F4B916 /* LoopMeTargeting.h */,
+				4798C9741F59986500B3A947 /* Viewability */,
+				4798C90B1F59986500B3A947 /* Internal */,
+				4798C9701F59986500B3A947 /* LoopMeAdView.h */,
+				4798C9711F59986500B3A947 /* LoopMeInterstitial.h */,
+				4798C9721F59986500B3A947 /* LoopMeSDK.h */,
+				4798C9731F59986500B3A947 /* LoopMeTargeting.h */,
 			);
 			name = "LoopMeSDK Sources";
 			path = "../LoopMeSDK Sources";
 			sourceTree = "<group>";
 		};
-		474D66EE1F42EEB100F4B916 /* Internal */ = {
+		4798C90B1F59986500B3A947 /* Internal */ = {
 			isa = PBXGroup;
 			children = (
-				474D66EF1F42EEB100F4B916 /* AdView */,
-				474D66F71F42EEB100F4B916 /* Builder */,
-				474D66FA1F42EEB100F4B916 /* Clients */,
-				474D67041F42EEB100F4B916 /* Controllers */,
-				474D67091F42EEB100F4B916 /* Interstitial */,
-				474D670B1F42EEB100F4B916 /* Network */,
-				474D67181F42EEB100F4B916 /* Resources */,
-				474D671A1F42EEB100F4B916 /* Targeting */,
-				474D671C1F42EEB100F4B916 /* Utility */,
-				474D67351F42EEB100F4B916 /* ViewControllers */,
-				474D67421F42EEB100F4B916 /* Views */,
+				4798C90C1F59986500B3A947 /* AdView */,
+				4798C9141F59986500B3A947 /* Builder */,
+				4798C9171F59986500B3A947 /* Clients */,
+				4798C9211F59986500B3A947 /* Controllers */,
+				4798C9261F59986500B3A947 /* Interstitial */,
+				4798C92A1F59986500B3A947 /* Network */,
+				4798C9371F59986500B3A947 /* Resources */,
+				4798C9391F59986500B3A947 /* Targeting */,
+				4798C93B1F59986500B3A947 /* Utility */,
+				4798C9541F59986500B3A947 /* ViewControllers */,
+				4798C9611F59986500B3A947 /* Views */,
 			);
 			path = Internal;
 			sourceTree = "<group>";
 		};
-		474D66EF1F42EEB100F4B916 /* AdView */ = {
+		4798C90C1F59986500B3A947 /* AdView */ = {
 			isa = PBXGroup;
 			children = (
-				474D66F01F42EEB100F4B916 /* LoopMeAdView.m */,
-				474D66F11F42EEB100F4B916 /* maximized */,
-				474D66F41F42EEB100F4B916 /* minimized */,
+				4798C90D1F59986500B3A947 /* LoopMeAdView.m */,
+				4798C90E1F59986500B3A947 /* maximized */,
+				4798C9111F59986500B3A947 /* minimized */,
 			);
 			path = AdView;
 			sourceTree = "<group>";
 		};
-		474D66F11F42EEB100F4B916 /* maximized */ = {
+		4798C90E1F59986500B3A947 /* maximized */ = {
 			isa = PBXGroup;
 			children = (
-				474D66F21F42EEB100F4B916 /* LoopMeMaximizedViewController.h */,
-				474D66F31F42EEB100F4B916 /* LoopMeMaximizedViewController.m */,
+				4798C90F1F59986500B3A947 /* LoopMeMaximizedViewController.h */,
+				4798C9101F59986500B3A947 /* LoopMeMaximizedViewController.m */,
 			);
 			path = maximized;
 			sourceTree = "<group>";
 		};
-		474D66F41F42EEB100F4B916 /* minimized */ = {
+		4798C9111F59986500B3A947 /* minimized */ = {
 			isa = PBXGroup;
 			children = (
-				474D66F51F42EEB100F4B916 /* LoopMeMinimizedAdView.h */,
-				474D66F61F42EEB100F4B916 /* LoopMeMinimizedAdView.m */,
+				4798C9121F59986500B3A947 /* LoopMeMinimizedAdView.h */,
+				4798C9131F59986500B3A947 /* LoopMeMinimizedAdView.m */,
 			);
 			path = minimized;
 			sourceTree = "<group>";
 		};
-		474D66F71F42EEB100F4B916 /* Builder */ = {
+		4798C9141F59986500B3A947 /* Builder */ = {
 			isa = PBXGroup;
 			children = (
-				474D66F81F42EEB100F4B916 /* LoopMeServerURLBuilder.h */,
-				474D66F91F42EEB100F4B916 /* LoopMeServerURLBuilder.m */,
+				4798C9151F59986500B3A947 /* LoopMeServerURLBuilder.h */,
+				4798C9161F59986500B3A947 /* LoopMeServerURLBuilder.m */,
 			);
 			path = Builder;
 			sourceTree = "<group>";
 		};
-		474D66FA1F42EEB100F4B916 /* Clients */ = {
+		4798C9171F59986500B3A947 /* Clients */ = {
 			isa = PBXGroup;
 			children = (
-				474D66FB1F42EEB100F4B916 /* LoopMeJSClient.h */,
-				474D66FC1F42EEB100F4B916 /* LoopMeJSClient.m */,
-				474D66FD1F42EEB100F4B916 /* LoopMeMRAIDClient.h */,
-				474D66FE1F42EEB100F4B916 /* LoopMeMRAIDClient.m */,
-				474D66FF1F42EEB100F4B916 /* LoopMeVideoClient.h */,
-				474D67001F42EEB100F4B916 /* LoopMeVideoClient.m */,
-				474D67011F42EEB100F4B916 /* Protocols */,
+				4798C9181F59986500B3A947 /* LoopMeJSClient.h */,
+				4798C9191F59986500B3A947 /* LoopMeJSClient.m */,
+				4798C91A1F59986500B3A947 /* LoopMeMRAIDClient.h */,
+				4798C91B1F59986500B3A947 /* LoopMeMRAIDClient.m */,
+				4798C91C1F59986500B3A947 /* LoopMeVideoClient.h */,
+				4798C91D1F59986500B3A947 /* LoopMeVideoClient.m */,
+				4798C91E1F59986500B3A947 /* Protocols */,
 			);
 			path = Clients;
 			sourceTree = "<group>";
 		};
-		474D67011F42EEB100F4B916 /* Protocols */ = {
+		4798C91E1F59986500B3A947 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				474D67021F42EEB100F4B916 /* LoopMeJSCommunicatorProtocol.h */,
-				474D67031F42EEB100F4B916 /* LoopMeVideoCommunicatorProtocol.h */,
+				4798C91F1F59986500B3A947 /* LoopMeJSCommunicatorProtocol.h */,
+				4798C9201F59986500B3A947 /* LoopMeVideoCommunicatorProtocol.h */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
 		};
-		474D67041F42EEB100F4B916 /* Controllers */ = {
+		4798C9211F59986500B3A947 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				474D67051F42EEB100F4B916 /* LoopMeAdDisplayController.h */,
-				474D67061F42EEB100F4B916 /* LoopMeAdDisplayController.m */,
-				474D67071F42EEB100F4B916 /* LoopMeDestinationDisplayController.h */,
-				474D67081F42EEB100F4B916 /* LoopMeDestinationDisplayController.m */,
+				4798C9221F59986500B3A947 /* LoopMeAdDisplayController.h */,
+				4798C9231F59986500B3A947 /* LoopMeAdDisplayController.m */,
+				4798C9241F59986500B3A947 /* LoopMeDestinationDisplayController.h */,
+				4798C9251F59986500B3A947 /* LoopMeDestinationDisplayController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		474D67091F42EEB100F4B916 /* Interstitial */ = {
+		4798C9261F59986500B3A947 /* Interstitial */ = {
 			isa = PBXGroup;
 			children = (
-				474D670A1F42EEB100F4B916 /* LoopMeInterstitial.m */,
+				4798C9271F59986500B3A947 /* LoopMeInterstitial.m */,
+				4798C9281F59986500B3A947 /* LoopMeInterstitialGeneral.h */,
+				4798C9291F59986500B3A947 /* LoopMeInterstitialGeneral.m */,
 			);
 			path = Interstitial;
 			sourceTree = "<group>";
 		};
-		474D670B1F42EEB100F4B916 /* Network */ = {
+		4798C92A1F59986500B3A947 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				474D670C1F42EEB100F4B916 /* LoopMeAdConfiguration.h */,
-				474D670D1F42EEB100F4B916 /* LoopMeAdConfiguration.m */,
-				474D670E1F42EEB100F4B916 /* LoopMeAdManager.h */,
-				474D670F1F42EEB100F4B916 /* LoopMeAdManager.m */,
-				474D67101F42EEB100F4B916 /* LoopMeReachability.h */,
-				474D67111F42EEB100F4B916 /* LoopMeReachability.m */,
-				474D67121F42EEB100F4B916 /* LoopMeServerCommunicator.h */,
-				474D67131F42EEB100F4B916 /* LoopMeServerCommunicator.m */,
-				474D67141F42EEB100F4B916 /* LoopMeURLResolver.h */,
-				474D67151F42EEB100F4B916 /* LoopMeURLResolver.m */,
-				474D67161F42EEB100F4B916 /* LoopMeVideoManager.h */,
-				474D67171F42EEB100F4B916 /* LoopMeVideoManager.m */,
+				4798C92B1F59986500B3A947 /* LoopMeAdConfiguration.h */,
+				4798C92C1F59986500B3A947 /* LoopMeAdConfiguration.m */,
+				4798C92D1F59986500B3A947 /* LoopMeAdManager.h */,
+				4798C92E1F59986500B3A947 /* LoopMeAdManager.m */,
+				4798C92F1F59986500B3A947 /* LoopMeReachability.h */,
+				4798C9301F59986500B3A947 /* LoopMeReachability.m */,
+				4798C9311F59986500B3A947 /* LoopMeServerCommunicator.h */,
+				4798C9321F59986500B3A947 /* LoopMeServerCommunicator.m */,
+				4798C9331F59986500B3A947 /* LoopMeURLResolver.h */,
+				4798C9341F59986500B3A947 /* LoopMeURLResolver.m */,
+				4798C9351F59986500B3A947 /* LoopMeVideoManager.h */,
+				4798C9361F59986500B3A947 /* LoopMeVideoManager.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
 		};
-		474D67181F42EEB100F4B916 /* Resources */ = {
+		4798C9371F59986500B3A947 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				474D67191F42EEB100F4B916 /* LoopMeResources.bundle */,
+				4798C9381F59986500B3A947 /* LoopMeResources.bundle */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		474D671A1F42EEB100F4B916 /* Targeting */ = {
+		4798C9391F59986500B3A947 /* Targeting */ = {
 			isa = PBXGroup;
 			children = (
-				474D671B1F42EEB100F4B916 /* LoopMeTargeting.m */,
+				4798C93A1F59986500B3A947 /* LoopMeTargeting.m */,
 			);
 			path = Targeting;
 			sourceTree = "<group>";
 		};
-		474D671C1F42EEB100F4B916 /* Utility */ = {
+		4798C93B1F59986500B3A947 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				474D671D1F42EEB100F4B916 /* Categories */,
-				474D67261F42EEB100F4B916 /* LoopMeAnalyticsProvider.h */,
-				474D67271F42EEB100F4B916 /* LoopMeAnalyticsProvider.m */,
-				474D67281F42EEB100F4B916 /* LoopMeDefinitions.h */,
-				474D67291F42EEB100F4B916 /* LoopMeError.h */,
-				474D672A1F42EEB100F4B916 /* LoopMeError.m */,
-				474D672B1F42EEB100F4B916 /* LoopMeErrorEventSender.h */,
-				474D672C1F42EEB100F4B916 /* LoopMeErrorEventSender.m */,
-				474D672D1F42EEB100F4B916 /* LoopMeGeoLocationProvider.h */,
-				474D672E1F42EEB100F4B916 /* LoopMeGeoLocationProvider.m */,
-				474D672F1F42EEB100F4B916 /* LoopMeGlobalSettings.h */,
-				474D67301F42EEB100F4B916 /* LoopMeGlobalSettings.m */,
-				474D67311F42EEB100F4B916 /* LoopMeIdentityProvider.h */,
-				474D67321F42EEB100F4B916 /* LoopMeIdentityProvider.m */,
-				474D67331F42EEB100F4B916 /* LoopMeLogging.h */,
-				474D67341F42EEB100F4B916 /* LoopMeLogging.m */,
+				4798C93C1F59986500B3A947 /* Categories */,
+				4798C9451F59986500B3A947 /* LoopMeAnalyticsProvider.h */,
+				4798C9461F59986500B3A947 /* LoopMeAnalyticsProvider.m */,
+				4798C9471F59986500B3A947 /* LoopMeDefinitions.h */,
+				4798C9481F59986500B3A947 /* LoopMeError.h */,
+				4798C9491F59986500B3A947 /* LoopMeError.m */,
+				4798C94A1F59986500B3A947 /* LoopMeErrorEventSender.h */,
+				4798C94B1F59986500B3A947 /* LoopMeErrorEventSender.m */,
+				4798C94C1F59986500B3A947 /* LoopMeGeoLocationProvider.h */,
+				4798C94D1F59986500B3A947 /* LoopMeGeoLocationProvider.m */,
+				4798C94E1F59986500B3A947 /* LoopMeGlobalSettings.h */,
+				4798C94F1F59986500B3A947 /* LoopMeGlobalSettings.m */,
+				4798C9501F59986500B3A947 /* LoopMeIdentityProvider.h */,
+				4798C9511F59986500B3A947 /* LoopMeIdentityProvider.m */,
+				4798C9521F59986500B3A947 /* LoopMeLogging.h */,
+				4798C9531F59986500B3A947 /* LoopMeLogging.m */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
 		};
-		474D671D1F42EEB100F4B916 /* Categories */ = {
+		4798C93C1F59986500B3A947 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				474D671E1F42EEB100F4B916 /* NSData+LoopMeAES128.h */,
-				474D671F1F42EEB100F4B916 /* NSData+LoopMeAES128.m */,
-				474D67201F42EEB100F4B916 /* NSString+Encryption.h */,
-				474D67211F42EEB100F4B916 /* NSString+Encryption.m */,
-				474D67221F42EEB100F4B916 /* NSURL+LoopMeAdditions.h */,
-				474D67231F42EEB100F4B916 /* NSURL+LoopMeAdditions.m */,
-				474D67241F42EEB100F4B916 /* UIImage+LoopMeBinaryImage.h */,
-				474D67251F42EEB100F4B916 /* UIImage+LoopMeBinaryImage.m */,
+				4798C93D1F59986500B3A947 /* NSData+LoopMeAES128.h */,
+				4798C93E1F59986500B3A947 /* NSData+LoopMeAES128.m */,
+				4798C93F1F59986500B3A947 /* NSString+Encryption.h */,
+				4798C9401F59986500B3A947 /* NSString+Encryption.m */,
+				4798C9411F59986500B3A947 /* NSURL+LoopMeAdditions.h */,
+				4798C9421F59986500B3A947 /* NSURL+LoopMeAdditions.m */,
+				4798C9431F59986500B3A947 /* UIImage+LoopMeBinaryImage.h */,
+				4798C9441F59986500B3A947 /* UIImage+LoopMeBinaryImage.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
 		};
-		474D67351F42EEB100F4B916 /* ViewControllers */ = {
+		4798C9541F59986500B3A947 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				474D67361F42EEB100F4B916 /* 360 */,
-				474D673C1F42EEB100F4B916 /* Ad */,
-				474D673F1F42EEB100F4B916 /* Browser */,
+				4798C9551F59986500B3A947 /* 360 */,
+				4798C95B1F59986500B3A947 /* Ad */,
+				4798C95E1F59986500B3A947 /* Browser */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		474D67361F42EEB100F4B916 /* 360 */ = {
+		4798C9551F59986500B3A947 /* 360 */ = {
 			isa = PBXGroup;
 			children = (
-				474D67371F42EEB100F4B916 /* LoopMe360ViewController.h */,
-				474D67381F42EEB100F4B916 /* LoopMe360ViewController.m */,
-				474D67391F42EEB100F4B916 /* Shaders */,
+				4798C9561F59986500B3A947 /* LoopMe360ViewController.h */,
+				4798C9571F59986500B3A947 /* LoopMe360ViewController.m */,
+				4798C9581F59986500B3A947 /* Shaders */,
 			);
 			path = 360;
 			sourceTree = "<group>";
 		};
-		474D67391F42EEB100F4B916 /* Shaders */ = {
+		4798C9581F59986500B3A947 /* Shaders */ = {
 			isa = PBXGroup;
 			children = (
-				474D673A1F42EEB100F4B916 /* LoopMeGLProgram.h */,
-				474D673B1F42EEB100F4B916 /* LoopMeGLProgram.m */,
+				4798C9591F59986500B3A947 /* LoopMeGLProgram.h */,
+				4798C95A1F59986500B3A947 /* LoopMeGLProgram.m */,
 			);
 			path = Shaders;
 			sourceTree = "<group>";
 		};
-		474D673C1F42EEB100F4B916 /* Ad */ = {
+		4798C95B1F59986500B3A947 /* Ad */ = {
 			isa = PBXGroup;
 			children = (
-				474D673D1F42EEB100F4B916 /* LoopMeInterstitialViewController.h */,
-				474D673E1F42EEB100F4B916 /* LoopMeInterstitialViewController.m */,
+				4798C95C1F59986500B3A947 /* LoopMeInterstitialViewController.h */,
+				4798C95D1F59986500B3A947 /* LoopMeInterstitialViewController.m */,
 			);
 			path = Ad;
 			sourceTree = "<group>";
 		};
-		474D673F1F42EEB100F4B916 /* Browser */ = {
+		4798C95E1F59986500B3A947 /* Browser */ = {
 			isa = PBXGroup;
 			children = (
-				474D67401F42EEB100F4B916 /* LoopMeBrowserViewController.h */,
-				474D67411F42EEB100F4B916 /* LoopMeBrowserViewController.m */,
+				4798C95F1F59986500B3A947 /* LoopMeBrowserViewController.h */,
+				4798C9601F59986500B3A947 /* LoopMeBrowserViewController.m */,
 			);
 			path = Browser;
 			sourceTree = "<group>";
 		};
-		474D67421F42EEB100F4B916 /* Views */ = {
+		4798C9611F59986500B3A947 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				474D67431F42EEB100F4B916 /* LoopMeBackView.h */,
-				474D67441F42EEB100F4B916 /* LoopMeBackView.m */,
-				474D67451F42EEB100F4B916 /* LoopMeCancelView.h */,
-				474D67461F42EEB100F4B916 /* LoopMeCancelView.m */,
-				474D67471F42EEB100F4B916 /* LoopMeCloseButton.h */,
-				474D67481F42EEB100F4B916 /* LoopMeCloseButton.m */,
-				474D67491F42EEB100F4B916 /* ProgressOvelray */,
-				474D674E1F42EEB100F4B916 /* WebView */,
+				4798C9621F59986500B3A947 /* LoopMeBackView.h */,
+				4798C9631F59986500B3A947 /* LoopMeBackView.m */,
+				4798C9641F59986500B3A947 /* LoopMeCancelView.h */,
+				4798C9651F59986500B3A947 /* LoopMeCancelView.m */,
+				4798C9661F59986500B3A947 /* LoopMeCloseButton.h */,
+				4798C9671F59986500B3A947 /* LoopMeCloseButton.m */,
+				4798C9681F59986500B3A947 /* ProgressOvelray */,
+				4798C96D1F59986500B3A947 /* WebView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		474D67491F42EEB100F4B916 /* ProgressOvelray */ = {
+		4798C9681F59986500B3A947 /* ProgressOvelray */ = {
 			isa = PBXGroup;
 			children = (
-				474D674A1F42EEB100F4B916 /* LoopMeActivityIndicatorView.h */,
-				474D674B1F42EEB100F4B916 /* LoopMeActivityIndicatorView.m */,
-				474D674C1F42EEB100F4B916 /* LoopMeProgressOverlayView.h */,
-				474D674D1F42EEB100F4B916 /* LoopMeProgressOverlayView.m */,
+				4798C9691F59986500B3A947 /* LoopMeActivityIndicatorView.h */,
+				4798C96A1F59986500B3A947 /* LoopMeActivityIndicatorView.m */,
+				4798C96B1F59986500B3A947 /* LoopMeProgressOverlayView.h */,
+				4798C96C1F59986500B3A947 /* LoopMeProgressOverlayView.m */,
 			);
 			path = ProgressOvelray;
 			sourceTree = "<group>";
 		};
-		474D674E1F42EEB100F4B916 /* WebView */ = {
+		4798C96D1F59986500B3A947 /* WebView */ = {
 			isa = PBXGroup;
 			children = (
-				474D674F1F42EEB100F4B916 /* LoopMeAdWebView.h */,
-				474D67501F42EEB100F4B916 /* LoopMeAdWebView.m */,
+				4798C96E1F59986500B3A947 /* LoopMeAdWebView.h */,
+				4798C96F1F59986500B3A947 /* LoopMeAdWebView.m */,
 			);
 			path = WebView;
+			sourceTree = "<group>";
+		};
+		4798C9741F59986500B3A947 /* Viewability */ = {
+			isa = PBXGroup;
+			children = (
+				4798C9751F59986500B3A947 /* LOOMoatMobileAppKit.framework */,
+			);
+			path = Viewability;
 			sourceTree = "<group>";
 		};
 		D003B25B1AFB9BDC007C7E0F /* LoopMeCompiler */ = {
 			isa = PBXGroup;
 			children = (
-				474D66EC1F42EEB100F4B916 /* LoopMeSDK Sources */,
+				4798C90A1F59986500B3A947 /* LoopMeSDK Sources */,
 				D003B26A1AFB9C11007C7E0F /* Supporting Files */,
 			);
 			name = LoopMeCompiler;
@@ -501,49 +515,50 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				474D67831F42EEB100F4B916 /* LoopMeDefinitions.h in Headers */,
-				474D67A81F42EEB100F4B916 /* LoopMeTargeting.h in Headers */,
-				474D678E1F42EEB100F4B916 /* LoopMeLogging.h in Headers */,
-				474D67A51F42EEB100F4B916 /* LoopMeAdView.h in Headers */,
-				474D67A61F42EEB100F4B916 /* LoopMeInterstitial.h in Headers */,
-				474D67841F42EEB100F4B916 /* LoopMeError.h in Headers */,
-				474D679A1F42EEB100F4B916 /* LoopMeCancelView.h in Headers */,
-				474D67641F42EEB100F4B916 /* LoopMeJSCommunicatorProtocol.h in Headers */,
-				474D679C1F42EEB100F4B916 /* LoopMeCloseButton.h in Headers */,
-				474D677B1F42EEB100F4B916 /* NSString+Encryption.h in Headers */,
-				474D676F1F42EEB100F4B916 /* LoopMeReachability.h in Headers */,
-				474D67681F42EEB100F4B916 /* LoopMeDestinationDisplayController.h in Headers */,
-				474D67811F42EEB100F4B916 /* LoopMeAnalyticsProvider.h in Headers */,
-				474D67A71F42EEB100F4B916 /* LoopMeSDK.h in Headers */,
-				474D67711F42EEB100F4B916 /* LoopMeServerCommunicator.h in Headers */,
-				474D67581F42EEB100F4B916 /* LoopMeMaximizedViewController.h in Headers */,
-				474D67981F42EEB100F4B916 /* LoopMeBackView.h in Headers */,
-				474D67651F42EEB100F4B916 /* LoopMeVideoCommunicatorProtocol.h in Headers */,
-				474D67621F42EEB100F4B916 /* LoopMeVideoClient.h in Headers */,
-				474D679E1F42EEB100F4B916 /* LoopMeActivityIndicatorView.h in Headers */,
-				474D67881F42EEB100F4B916 /* LoopMeGeoLocationProvider.h in Headers */,
-				474D675E1F42EEB100F4B916 /* LoopMeJSClient.h in Headers */,
-				474D67961F42EEB100F4B916 /* LoopMeBrowserViewController.h in Headers */,
-				474D676B1F42EEB100F4B916 /* LoopMeAdConfiguration.h in Headers */,
-				474D67791F42EEB100F4B916 /* NSData+LoopMeAES128.h in Headers */,
-				474D677D1F42EEB100F4B916 /* NSURL+LoopMeAdditions.h in Headers */,
-				474D67901F42EEB100F4B916 /* LoopMe360ViewController.h in Headers */,
-				474D675A1F42EEB100F4B916 /* LoopMeMinimizedAdView.h in Headers */,
-				474D677F1F42EEB100F4B916 /* UIImage+LoopMeBinaryImage.h in Headers */,
-				474D67731F42EEB100F4B916 /* LoopMeURLResolver.h in Headers */,
-				474D676D1F42EEB100F4B916 /* LoopMeAdManager.h in Headers */,
-				474D678C1F42EEB100F4B916 /* LoopMeIdentityProvider.h in Headers */,
-				474D678A1F42EEB100F4B916 /* LoopMeGlobalSettings.h in Headers */,
-				474D67601F42EEB100F4B916 /* LoopMeMRAIDClient.h in Headers */,
-				474D67A01F42EEB100F4B916 /* LoopMeProgressOverlayView.h in Headers */,
-				474D67751F42EEB100F4B916 /* LoopMeVideoManager.h in Headers */,
-				474D67A21F42EEB100F4B916 /* LoopMeAdWebView.h in Headers */,
-				474D67921F42EEB100F4B916 /* LoopMeGLProgram.h in Headers */,
-				474D67861F42EEB100F4B916 /* LoopMeErrorEventSender.h in Headers */,
-				474D67941F42EEB100F4B916 /* LoopMeInterstitialViewController.h in Headers */,
+				4798C9AF1F59986500B3A947 /* LoopMeLogging.h in Headers */,
+				4798C9A41F59986500B3A947 /* LoopMeDefinitions.h in Headers */,
+				4798C9C81F59986500B3A947 /* LoopMeTargeting.h in Headers */,
+				4798C9C51F59986500B3A947 /* LoopMeAdView.h in Headers */,
+				4798C9A51F59986500B3A947 /* LoopMeError.h in Headers */,
+				4798C9C61F59986500B3A947 /* LoopMeInterstitial.h in Headers */,
+				4798C9831F59986500B3A947 /* LoopMeJSCommunicatorProtocol.h in Headers */,
+				4798C9C31F59986500B3A947 /* LoopMeAdWebView.h in Headers */,
+				4798C99E1F59986500B3A947 /* NSURL+LoopMeAdditions.h in Headers */,
+				4798C99C1F59986500B3A947 /* NSString+Encryption.h in Headers */,
+				4798C9B91F59986500B3A947 /* LoopMeBackView.h in Headers */,
+				4798C9871F59986500B3A947 /* LoopMeDestinationDisplayController.h in Headers */,
+				4798C9941F59986500B3A947 /* LoopMeURLResolver.h in Headers */,
+				4798C9AB1F59986500B3A947 /* LoopMeGlobalSettings.h in Headers */,
+				4798C9A01F59986500B3A947 /* UIImage+LoopMeBinaryImage.h in Headers */,
+				4798C9B51F59986500B3A947 /* LoopMeInterstitialViewController.h in Headers */,
+				4798C9A71F59986500B3A947 /* LoopMeErrorEventSender.h in Headers */,
+				4798C9B11F59986500B3A947 /* LoopMe360ViewController.h in Headers */,
+				4798C9901F59986500B3A947 /* LoopMeReachability.h in Headers */,
+				4798C9771F59986500B3A947 /* LoopMeMaximizedViewController.h in Headers */,
+				4798C9921F59986500B3A947 /* LoopMeServerCommunicator.h in Headers */,
+				4798C98E1F59986500B3A947 /* LoopMeAdManager.h in Headers */,
+				4798C9BD1F59986500B3A947 /* LoopMeCloseButton.h in Headers */,
+				4798C9B71F59986500B3A947 /* LoopMeBrowserViewController.h in Headers */,
+				4798C9841F59986500B3A947 /* LoopMeVideoCommunicatorProtocol.h in Headers */,
+				4798C9811F59986500B3A947 /* LoopMeVideoClient.h in Headers */,
+				4798C97D1F59986500B3A947 /* LoopMeJSClient.h in Headers */,
+				4798C9791F59986500B3A947 /* LoopMeMinimizedAdView.h in Headers */,
+				4798C97F1F59986500B3A947 /* LoopMeMRAIDClient.h in Headers */,
+				4798C9A21F59986500B3A947 /* LoopMeAnalyticsProvider.h in Headers */,
+				4798C9961F59986500B3A947 /* LoopMeVideoManager.h in Headers */,
+				4798C9A91F59986500B3A947 /* LoopMeGeoLocationProvider.h in Headers */,
+				4798C9C71F59986500B3A947 /* LoopMeSDK.h in Headers */,
 				D003B2701AFB9C3D007C7E0F /* LoopMeCompiler-Prefix.pch in Headers */,
-				474D67661F42EEB100F4B916 /* LoopMeAdDisplayController.h in Headers */,
-				474D675C1F42EEB100F4B916 /* LoopMeServerURLBuilder.h in Headers */,
+				4798C9851F59986500B3A947 /* LoopMeAdDisplayController.h in Headers */,
+				4798C97B1F59986500B3A947 /* LoopMeServerURLBuilder.h in Headers */,
+				4798C98A1F59986500B3A947 /* LoopMeInterstitialGeneral.h in Headers */,
+				4798C99A1F59986500B3A947 /* NSData+LoopMeAES128.h in Headers */,
+				4798C9C11F59986500B3A947 /* LoopMeProgressOverlayView.h in Headers */,
+				4798C9AD1F59986500B3A947 /* LoopMeIdentityProvider.h in Headers */,
+				4798C9BB1F59986500B3A947 /* LoopMeCancelView.h in Headers */,
+				4798C9B31F59986500B3A947 /* LoopMeGLProgram.h in Headers */,
+				4798C9BF1F59986500B3A947 /* LoopMeActivityIndicatorView.h in Headers */,
+				4798C98C1F59986500B3A947 /* LoopMeAdConfiguration.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -606,7 +621,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				474D67771F42EEB100F4B916 /* LoopMeResources.bundle in Resources */,
+				4798C9981F59986500B3A947 /* LoopMeResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -648,44 +663,45 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				474D679D1F42EEB100F4B916 /* LoopMeCloseButton.m in Sources */,
-				474D67891F42EEB100F4B916 /* LoopMeGeoLocationProvider.m in Sources */,
-				474D678F1F42EEB100F4B916 /* LoopMeLogging.m in Sources */,
-				474D67951F42EEB100F4B916 /* LoopMeInterstitialViewController.m in Sources */,
-				474D677A1F42EEB100F4B916 /* NSData+LoopMeAES128.m in Sources */,
-				474D67611F42EEB100F4B916 /* LoopMeMRAIDClient.m in Sources */,
-				474D67781F42EEB100F4B916 /* LoopMeTargeting.m in Sources */,
-				474D67931F42EEB100F4B916 /* LoopMeGLProgram.m in Sources */,
-				474D67971F42EEB100F4B916 /* LoopMeBrowserViewController.m in Sources */,
-				474D67701F42EEB100F4B916 /* LoopMeReachability.m in Sources */,
-				474D67871F42EEB100F4B916 /* LoopMeErrorEventSender.m in Sources */,
-				474D67671F42EEB100F4B916 /* LoopMeAdDisplayController.m in Sources */,
-				474D678B1F42EEB100F4B916 /* LoopMeGlobalSettings.m in Sources */,
-				474D67691F42EEB100F4B916 /* LoopMeDestinationDisplayController.m in Sources */,
-				474D67A31F42EEB100F4B916 /* LoopMeAdWebView.m in Sources */,
-				474D675D1F42EEB100F4B916 /* LoopMeServerURLBuilder.m in Sources */,
-				474D67741F42EEB100F4B916 /* LoopMeURLResolver.m in Sources */,
-				474D677C1F42EEB100F4B916 /* NSString+Encryption.m in Sources */,
-				474D679F1F42EEB100F4B916 /* LoopMeActivityIndicatorView.m in Sources */,
-				474D67851F42EEB100F4B916 /* LoopMeError.m in Sources */,
-				474D67631F42EEB100F4B916 /* LoopMeVideoClient.m in Sources */,
-				474D675F1F42EEB100F4B916 /* LoopMeJSClient.m in Sources */,
-				474D67A11F42EEB100F4B916 /* LoopMeProgressOverlayView.m in Sources */,
-				474D67571F42EEB100F4B916 /* LoopMeAdView.m in Sources */,
-				474D679B1F42EEB100F4B916 /* LoopMeCancelView.m in Sources */,
-				474D675B1F42EEB100F4B916 /* LoopMeMinimizedAdView.m in Sources */,
-				474D676E1F42EEB100F4B916 /* LoopMeAdManager.m in Sources */,
-				474D676C1F42EEB100F4B916 /* LoopMeAdConfiguration.m in Sources */,
-				474D67821F42EEB100F4B916 /* LoopMeAnalyticsProvider.m in Sources */,
-				474D67991F42EEB100F4B916 /* LoopMeBackView.m in Sources */,
-				474D67591F42EEB100F4B916 /* LoopMeMaximizedViewController.m in Sources */,
-				474D67801F42EEB100F4B916 /* UIImage+LoopMeBinaryImage.m in Sources */,
-				474D677E1F42EEB100F4B916 /* NSURL+LoopMeAdditions.m in Sources */,
-				474D67761F42EEB100F4B916 /* LoopMeVideoManager.m in Sources */,
-				474D676A1F42EEB100F4B916 /* LoopMeInterstitial.m in Sources */,
-				474D67911F42EEB100F4B916 /* LoopMe360ViewController.m in Sources */,
-				474D67721F42EEB100F4B916 /* LoopMeServerCommunicator.m in Sources */,
-				474D678D1F42EEB100F4B916 /* LoopMeIdentityProvider.m in Sources */,
+				4798C9BE1F59986500B3A947 /* LoopMeCloseButton.m in Sources */,
+				4798C9C41F59986500B3A947 /* LoopMeAdWebView.m in Sources */,
+				4798C9B21F59986500B3A947 /* LoopMe360ViewController.m in Sources */,
+				4798C9BA1F59986500B3A947 /* LoopMeBackView.m in Sources */,
+				4798C9801F59986500B3A947 /* LoopMeMRAIDClient.m in Sources */,
+				4798C9861F59986500B3A947 /* LoopMeAdDisplayController.m in Sources */,
+				4798C9B81F59986500B3A947 /* LoopMeBrowserViewController.m in Sources */,
+				4798C98B1F59986500B3A947 /* LoopMeInterstitialGeneral.m in Sources */,
+				4798C9AA1F59986500B3A947 /* LoopMeGeoLocationProvider.m in Sources */,
+				4798C98D1F59986500B3A947 /* LoopMeAdConfiguration.m in Sources */,
+				4798C98F1F59986500B3A947 /* LoopMeAdManager.m in Sources */,
+				4798C9C21F59986500B3A947 /* LoopMeProgressOverlayView.m in Sources */,
+				4798C9A81F59986500B3A947 /* LoopMeErrorEventSender.m in Sources */,
+				4798C9BC1F59986500B3A947 /* LoopMeCancelView.m in Sources */,
+				4798C99B1F59986500B3A947 /* NSData+LoopMeAES128.m in Sources */,
+				4798C9AE1F59986500B3A947 /* LoopMeIdentityProvider.m in Sources */,
+				4798C99D1F59986500B3A947 /* NSString+Encryption.m in Sources */,
+				4798C9991F59986500B3A947 /* LoopMeTargeting.m in Sources */,
+				4798C9881F59986500B3A947 /* LoopMeDestinationDisplayController.m in Sources */,
+				4798C97C1F59986500B3A947 /* LoopMeServerURLBuilder.m in Sources */,
+				4798C9B01F59986500B3A947 /* LoopMeLogging.m in Sources */,
+				4798C9821F59986500B3A947 /* LoopMeVideoClient.m in Sources */,
+				4798C97E1F59986500B3A947 /* LoopMeJSClient.m in Sources */,
+				4798C9A11F59986500B3A947 /* UIImage+LoopMeBinaryImage.m in Sources */,
+				4798C9761F59986500B3A947 /* LoopMeAdView.m in Sources */,
+				4798C9B41F59986500B3A947 /* LoopMeGLProgram.m in Sources */,
+				4798C9B61F59986500B3A947 /* LoopMeInterstitialViewController.m in Sources */,
+				4798C9A31F59986500B3A947 /* LoopMeAnalyticsProvider.m in Sources */,
+				4798C97A1F59986500B3A947 /* LoopMeMinimizedAdView.m in Sources */,
+				4798C9C01F59986500B3A947 /* LoopMeActivityIndicatorView.m in Sources */,
+				4798C9781F59986500B3A947 /* LoopMeMaximizedViewController.m in Sources */,
+				4798C9911F59986500B3A947 /* LoopMeReachability.m in Sources */,
+				4798C9971F59986500B3A947 /* LoopMeVideoManager.m in Sources */,
+				4798C9931F59986500B3A947 /* LoopMeServerCommunicator.m in Sources */,
+				4798C9891F59986500B3A947 /* LoopMeInterstitial.m in Sources */,
+				4798C9AC1F59986500B3A947 /* LoopMeGlobalSettings.m in Sources */,
+				4798C99F1F59986500B3A947 /* NSURL+LoopMeAdditions.m in Sources */,
+				4798C9A61F59986500B3A947 /* LoopMeError.m in Sources */,
+				4798C9951F59986500B3A947 /* LoopMeURLResolver.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -774,7 +790,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				ENABLE_BITCODE = YES;
-				FRAMEWORK_SEARCH_PATHS = "\"$(PROJECT_DIR)/../LoopMeSDK Sources\"";
+				FRAMEWORK_SEARCH_PATHS = "\"$(PROJECT_DIR)/../LoopMeSDK Sources/Viewability\"";
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = LoopMeCompiler/Info.plist;
 				INFOPLIST_PATH = "$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/Info.plist";
@@ -804,7 +820,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				ENABLE_BITCODE = YES;
-				FRAMEWORK_SEARCH_PATHS = "\"$(PROJECT_DIR)/../LoopMeSDK Sources\"";
+				FRAMEWORK_SEARCH_PATHS = "\"$(PROJECT_DIR)/../LoopMeSDK Sources/Viewability\"";
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = LoopMeCompiler/Info.plist;
 				INFOPLIST_PATH = "$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/Info.plist";

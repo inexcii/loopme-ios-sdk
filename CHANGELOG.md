@@ -1,3 +1,8 @@
+## Version 6.4.0 (01.09.2017)
+
+- Display rate performance improvement.
+- Bug fixes and performance improved.
+
 ## Version 6.3.2 (07.08.2017)
 
 - Bug fixes and performance improved.

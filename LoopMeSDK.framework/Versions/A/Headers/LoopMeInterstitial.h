@@ -5,6 +5,8 @@
 //  Copyright (c) 2012 LoopMe. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
+
 /**
  * AppKeys for test purposes
  */
@@ -12,7 +14,7 @@
 static NSString * const TEST_APP_KEY_INTERSTITIAL_PORTRAIT = @"test_interstitial_p";
 static NSString * const TEST_APP_KEY_INTERSTITIAL_LANDSCAPE = @"test_interstitial_l";
 
-@class LoopMeInterstitial;
+@class LoopMeInterstitialGeneral;
 @class LoopMeTargeting;
 @class UIViewController;
 @protocol LoopMeInterstitialDelegate;
@@ -49,6 +51,11 @@ static NSString * const TEST_APP_KEY_INTERSTITIAL_LANDSCAPE = @"test_interstitia
 @property (nonatomic, assign, readonly, getter = isLoading) BOOL loading;
 
 /**
+ * Set YES if you want to enable automatic loading mode with high display rate performance. Default value YES.
+ */
+@property (nonatomic, assign, readonly, getter = isAutoLoading) BOOL autoLoading;
+
+/**
  * Set YES if you want to disable loading video when Wi-Fi turned off. Default value NO.
  */
 @property (nonatomic, assign, getter = isDoNotLoadVideoWithoutWiFi) BOOL doNotLoadVideoWithoutWiFi;
@@ -71,19 +78,12 @@ static NSString * const TEST_APP_KEY_INTERSTITIAL_LANDSCAPE = @"test_interstitia
  * @param appKey - unique identifier in LoopMe ad network.
  * @param delegate - delegate
  */
-+ (LoopMeInterstitial *)interstitialWithAppKey:(NSString *)appKey
-                                      delegate:(id<LoopMeInterstitialDelegate>)delegate;
++ (LoopMeInterstitialGeneral *)interstitialWithAppKey:(NSString *)appKey
+                                             delegate:(id<LoopMeInterstitialDelegate>)delegate;
 
-/**
- * Returns the array of interstitial objects already allocated in your application.
- */
-+ (NSMutableArray *)sharedInterstitials;
+- (instancetype)initWithAppKey:(NSString *)appKey
+                          delegate:(id<LoopMeInterstitialDelegate>)delegate;
 
-/**
- * Removes an interstitial object from shared pool.
- * Use it when you no longer need interstitial ads for specified appKey
- */
-+ (void)removeSharedInterstitial:(LoopMeInterstitial *)interstitial;
 
 /**
  * Starts loading ad content process.

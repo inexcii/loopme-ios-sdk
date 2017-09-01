@@ -19,4 +19,4 @@ FOUNDATION_EXPORT const unsigned char LoopMeSDKVersionString[];
 #import <LoopMeSDK/LoopMeAdView.h>
 #import <LoopMeSDK/LoopMeTargeting.h>
 #import <LoopMeSDK/LoopMeLogging.h>
-
+#import <LoopMeSDK/LoopMeDefinitions.h>
