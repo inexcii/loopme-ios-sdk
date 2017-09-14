@@ -1,3 +1,7 @@
+## Version 6.4.1 (14.09.2017)
+
+- fixed MRAID ad issues. 
+
 ## Version 6.4.0 (01.09.2017)
 
 - Display rate performance improvement.

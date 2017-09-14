@@ -25,7 +25,7 @@ static NSString * const TEST_APP_KEY_INTERSTITIAL_LANDSCAPE = @"test_interstitia
  *
  * It is recommented to define interstitial's `targeting` property, which will be passed as part of the ad request to get more relevant advertisement.
  * Also for the same purpose, the SDK tries to get the user location and keeps informed about location updating simply using timer with 10 minutes interval.
- * You can use `LoopMeGeoLocationProvider` `locationUpdatesEnabled` property to opt out of this functionality. 
+ * You can use `LoopMeGeoLocationProvider` `locationUpdatesEnabled` property to opt out of this functionality.
  * The SDK will never prompt the user for permission if location permissions are not currently granted.
  *
  * It is recommended to implement `LoopMeInterstitialDelegate`
@@ -38,13 +38,13 @@ static NSString * const TEST_APP_KEY_INTERSTITIAL_LANDSCAPE = @"test_interstitia
 @property (nonatomic, weak) id<LoopMeInterstitialDelegate> delegate;
 
 /**
- * The appKey uniquely identifies your app to the LoopMe ad network. 
+ * The appKey uniquely identifies your app to the LoopMe ad network.
  * To get an appKey visit the LoopMe Dashboard.
  */
 @property (nonatomic, strong, readonly) NSString *appKey;
 
 /**
- * Indicates whether the interstitial is loading an ad content. 
+ * Indicates whether the interstitial is loading an ad content.
  * It is set to yes after calling `loadAd` method. It is set to NO when ad succeds or fails to load.
  * While this property is YES all other calling `loadAd` methods will be ignored
  */
@@ -53,7 +53,7 @@ static NSString * const TEST_APP_KEY_INTERSTITIAL_LANDSCAPE = @"test_interstitia
 /**
  * Set YES if you want to enable automatic loading mode with high display rate performance. Default value YES.
  */
-@property (nonatomic, assign, readonly, getter = isAutoLoading) BOOL autoLoading;
+@property (nonatomic, assign, getter = isAutoLoading) BOOL autoLoading;
 
 /**
  * Set YES if you want to disable loading video when Wi-Fi turned off. Default value NO.
@@ -65,13 +65,13 @@ static NSString * const TEST_APP_KEY_INTERSTITIAL_LANDSCAPE = @"test_interstitia
  * Indicates whether ad content was loaded succesfully and ready to be displayed.
  * After you initialized a `LoopMeInterstitial` object and triggered the `loadAd` method,
  * this property will be set to YES on it's successful completion.
- * It is set to NO when loaded ad content has expired or already was presented, 
+ * It is set to NO when loaded ad content has expired or already was presented,
  * in this case it requires next `loadAd` method triggering
  */
 @property (nonatomic, assign, readonly, getter = isReady) BOOL ready;
 
 /**
- * Returns new `LoopMeInterstitial` object with the given appKey 
+ * Returns new `LoopMeInterstitial` object with the given appKey
  * OR existing one from shared pool if it was previously created for given appKey (see `sharedInterstitials` method).
  * It guarantees that only one `LoopMeInterstitial` object per appKey can be initialized.
  * Use `removeSharedInterstitial` method to remove it completely from shared pool.

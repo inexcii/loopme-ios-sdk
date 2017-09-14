@@ -285,19 +285,24 @@ NSString * const kLoopMeBaseURL = @"http://loopme.me/";
     }
 
     if (configuration.isMraid) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            NSBundle *resourcesBundle = [NSBundle bundleWithURL:[[NSBundle mainBundle] URLForResource:@"LoopMeResources" withExtension:@"bundle"]];
+        NSBundle *resourcesBundle = [NSBundle bundleWithURL:[[NSBundle mainBundle] URLForResource:@"LoopMeResources" withExtension:@"bundle"]];
             NSString *jsPath = [resourcesBundle pathForResource:@"mraid" ofType:@"js"];
             NSString *mraidjs = [NSString stringWithContentsOfFile:jsPath encoding:NSUTF8StringEncoding error:NULL];
+        
+        if (mraidjs) {
+            mraidjs = [mraidjs stringByAppendingString:@"</script>"];
+            mraidjs = [@"<script>" stringByAppendingString:mraidjs];
             
-            if (mraidjs) {
-                [self.webView stringByEvaluatingJavaScriptFromString:mraidjs];
-            } else {
-                [self.delegate adDisplayController:self didFailToLoadAdWithError:[LoopMeError errorForStatusCode:LoopMeErrorCodeNoMraidJS]];
-            }
-            [self.mraidClient executeEvent:LoopMeMRAIDFunctions.stateChange params:@[LoopMeMRAIDState.loading]];
-        });
+            NSMutableString *html = [configuration.adResponseHTMLString mutableCopy];
+            
+            NSRange range = [html rangeOfString:@"<script>"];
+            [html insertString:mraidjs atIndex:range.location];
+            configuration.adResponseHTMLString = html;
+        } else {
+            [self.delegate adDisplayController:self didFailToLoadAdWithError:[LoopMeError errorForStatusCode:LoopMeErrorCodeNoMraidJS]];
+        }
     }
+    
     [self setUpJSContext];
     [self.webView loadHTMLString:configuration.adResponseHTMLString
                          baseURL:[NSURL URLWithString:kLoopMeBaseURL]];
@@ -331,7 +336,6 @@ NSString * const kLoopMeBaseURL = @"http://loopme.me/";
         [self.mraidClient executeEvent:LoopMeMRAIDFunctions.setDefaultPosition params:@[@0, @0, @(adjustedFrame.size.width), @(adjustedFrame.size.height)]];
         [self.mraidClient executeEvent:LoopMeMRAIDFunctions.setMaxSize params:@[@(adjustedFrame.size.width),@(adjustedFrame.size.height)]];
         [self.mraidClient executeEvent:LoopMeMRAIDFunctions.setScreenSize params:@[@(adjustedFrame.size.width), @(adjustedFrame.size.height)]];
-        [self.mraidClient executeEvent:LoopMeMRAIDFunctions.sizeChange params:@[@(adjustedFrame.size.width),@(adjustedFrame.size.height)]];
         [self.mraidClient executeEvent:LoopMeMRAIDFunctions.stateChange params:@[LoopMeMRAIDState.defaultt]];
         [self.mraidClient executeEvent:LoopMeMRAIDFunctions.ready params:nil];
         
@@ -353,9 +357,12 @@ NSString * const kLoopMeBaseURL = @"http://loopme.me/";
     [self stopHandlingRequests];
     self.visible = NO;
     self.adDisplayed = NO;
+    [self.JSClient executeEvent:LoopMeEvent.state forNamespace:kLoopMeNamespaceWebview param:LoopMeWebViewState.closed];
     [self.webView removeGestureRecognizer:self.panWebView];
     [self.webView removeGestureRecognizer:self.pinchWebView];
-    [self.JSClient executeEvent:LoopMeEvent.state forNamespace:kLoopMeNamespaceWebview param:LoopMeWebViewState.closed];
+    
+    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"about:blank"]]];
+    [self.webView stopLoading];
 }
 
 - (void)layoutSubviews {
@@ -435,7 +442,6 @@ NSString * const kLoopMeBaseURL = @"http://loopme.me/";
     if (self.configuration.isMraid) {
         [self.mraidClient setSupports];
         [self setOrientation:[self.mraidClient getOrientationProperties] forConfiguration:self.configuration];
-        [self.delegate adDisplayControllerDidFinishLoadingAd:self];
     }
 }
 

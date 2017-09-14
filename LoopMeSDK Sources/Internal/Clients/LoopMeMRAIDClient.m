@@ -115,8 +115,6 @@ const struct LoopMeMRAIDStateStruct LoopMeMRAIDState =
     } else {
         LoopMeLogDebug(@"JS command: %@ is not supported", command);
     }
-    
-    
 }
 
 #pragma mark JS Events

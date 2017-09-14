@@ -1,10 +1,9 @@
 You can find integration guide in our github [wiki](https://github.com/loopme/loopme-ios-sdk/wiki) page.
 
 ## What's new ##
-**v6.4.0**
+**v6.4.1**
 
-- Display rate performance improvement.
-- Bug fixes and performance improved.
+- fixed MRAID ad issues. 
 
 Please view the [changelog](CHANGELOG.md) for details.
 
