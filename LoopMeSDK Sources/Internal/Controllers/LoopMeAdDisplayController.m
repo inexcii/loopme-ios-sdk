@@ -47,7 +47,6 @@ NSString * const kLoopMeBaseURL = @"http://loopme.me/";
 @property (nonatomic, strong) LoopMeMRAIDClient *mraidClient;
 @property (nonatomic, strong) LoopMeVideoClient *videoClient;
 @property (nonatomic, strong) LoopMeDestinationDisplayController *destinationDisplayClient;
-@property (nonatomic, assign, getter = isShouldHandleRequests) BOOL shouldHandleRequests;
 @property (nonatomic, strong) NSTimer *webViewTimeOutTimer;
 @property (nonatomic, strong) LoopMeAdConfiguration *configuration;
 
@@ -270,7 +269,6 @@ NSString * const kLoopMeBaseURL = @"http://loopme.me/";
 
 - (void)loadConfiguration:(LoopMeAdConfiguration *)configuration {
     self.configuration = configuration;
-    self.shouldHandleRequests = YES;
     
     if ([self.configuration useTracking:LoopMeTrackerName.moat]) {
         LOOMoatOptions *options = [[LOOMoatOptions alloc] init];
@@ -285,9 +283,16 @@ NSString * const kLoopMeBaseURL = @"http://loopme.me/";
     }
 
     if (configuration.isMraid) {
-        NSBundle *resourcesBundle = [NSBundle bundleWithURL:[[NSBundle mainBundle] URLForResource:@"LoopMeResources" withExtension:@"bundle"]];
-            NSString *jsPath = [resourcesBundle pathForResource:@"mraid" ofType:@"js"];
-            NSString *mraidjs = [NSString stringWithContentsOfFile:jsPath encoding:NSUTF8StringEncoding error:NULL];
+        
+        NSURL *bundleURL = [[NSBundle mainBundle] URLForResource:@"LoopMeResources" withExtension:@"bundle"];
+        if (!bundleURL) {
+            [self.delegate adDisplayController:self didFailToLoadAdWithError:[LoopMeError errorForStatusCode:LoopMeErrorCodeNoMraidJS]];
+            return;
+        }
+        
+        NSBundle *resourcesBundle = [NSBundle bundleWithURL:bundleURL];
+        NSString *jsPath = [resourcesBundle pathForResource:@"mraid" ofType:@"js"];
+        NSString *mraidjs = [NSString stringWithContentsOfFile:jsPath encoding:NSUTF8StringEncoding error:NULL];
         
         if (mraidjs) {
             mraidjs = [mraidjs stringByAppendingString:@"</script>"];
@@ -300,12 +305,16 @@ NSString * const kLoopMeBaseURL = @"http://loopme.me/";
             configuration.adResponseHTMLString = html;
         } else {
             [self.delegate adDisplayController:self didFailToLoadAdWithError:[LoopMeError errorForStatusCode:LoopMeErrorCodeNoMraidJS]];
+            return;
         }
     }
     
-    [self setUpJSContext];
-    [self.webView loadHTMLString:configuration.adResponseHTMLString
-                         baseURL:[NSURL URLWithString:kLoopMeBaseURL]];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self setUpJSContext];
+        [self.webView loadHTMLString:configuration.adResponseHTMLString
+                             baseURL:[NSURL URLWithString:kLoopMeBaseURL]];
+    });
+    
     self.webViewTimeOutTimer = [NSTimer scheduledTimerWithTimeInterval:kLoopMeWebViewLoadingTimeout target:self selector:@selector(cancelWebView) userInfo:nil repeats:NO];
 }
 
@@ -354,15 +363,17 @@ NSString * const kLoopMeBaseURL = @"http://loopme.me/";
     if ([self.configuration useTracking:LoopMeTrackerName.moat]) {
         [self.tracker stopTracking];
     }
-    [self stopHandlingRequests];
     self.visible = NO;
     self.adDisplayed = NO;
     [self.JSClient executeEvent:LoopMeEvent.state forNamespace:kLoopMeNamespaceWebview param:LoopMeWebViewState.closed];
     [self.webView removeGestureRecognizer:self.panWebView];
     [self.webView removeGestureRecognizer:self.pinchWebView];
-    
-    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"about:blank"]]];
     [self.webView stopLoading];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.webView loadHTMLString:@"" baseURL:nil];
+        [self stopHandlingRequests];
+    });
+
 }
 
 - (void)layoutSubviews {
@@ -374,18 +385,12 @@ NSString * const kLoopMeBaseURL = @"http://loopme.me/";
 }
 
 - (void)stopHandlingRequests {
-    self.shouldHandleRequests = NO;
     [self.destinationDisplayClient cancel];
     self.destinationDisplayClient = nil;
     [self.videoClient cancel];
     self.videoClient = nil;
     self.destinationDisplayClient = nil;
-    [self.webView stopLoading];
     [self.webViewTimeOutTimer invalidate];
-}
-
-- (void)continueHandlingRequests {
-    self.shouldHandleRequests = YES;
 }
 
 - (void)moveView:(BOOL)hideWebView {
@@ -421,9 +426,6 @@ NSString * const kLoopMeBaseURL = @"http://loopme.me/";
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request
  navigationType:(UIWebViewNavigationType)navigationType {
-    if (!self.isShouldHandleRequests) {
-        return NO;
-    }
     NSURL *URL = [request URL];
     if ([self.JSClient shouldInterceptURL:URL]) {
         [self.JSClient executeEvent:LoopMeEvent.isNativeCallFinished forNamespace:kLoopMeNamespaceWebview param:@YES paramBOOL:YES];
@@ -645,6 +647,10 @@ NSString * const kLoopMeBaseURL = @"http://loopme.me/";
 
 - (BOOL)useMoatTracking {
     return [_configuration useTracking:LoopMeTrackerName.moat];
+}
+
+- (BOOL)isVideo360 {
+    return [_configuration isV360];
 }
 
 @end

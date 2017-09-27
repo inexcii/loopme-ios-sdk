@@ -18,10 +18,8 @@
 #import "LoopMeLogging.h"
 
 @interface LoopMeBrowserViewController ()
-<
-    MFMailComposeViewControllerDelegate
->
-@property (nonatomic, strong) UIActionSheet *actionSheet;
+
+@property (nonatomic, strong) UIAlertController *actionSheet;
 @property (nonatomic, strong) NSString *HTMLString;
 @property (nonatomic, assign) int webViewLoadCount;
 @property (nonatomic, strong) UIWebView *webView;
@@ -38,7 +36,7 @@
 - (void)refresh;
 - (void)done;
 - (void)back:(id)sender;
-- (void)safari;
+- (void)safari:(UIBarButtonItem *)sender;
 - (void)dismissActionSheetAnimated:(BOOL)animated;
 - (BOOL)canHandleURL:(NSURL *)URL;
 - (void)handleURL:(NSURL *)URL;
@@ -74,7 +72,7 @@
         _HTMLString = HTMLString;
         self.view.backgroundColor = [UIColor blackColor];
         [self webView];
-        
+        [self initActionSheet];
         [_webView loadRequest:[NSURLRequest requestWithURL:URL]];
     }
     return self;
@@ -91,6 +89,19 @@
 }
 
 #pragma mark - Private
+
+- (void)initActionSheet {
+    self.actionSheet = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
+    UIAlertAction *safari = [UIAlertAction actionWithTitle:@"Open in Safari" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        LoopMeDestinationDisplayController *displayController = (LoopMeDestinationDisplayController *)self.delegate;
+        [displayController openURLInApplication:self.URL];
+    }];
+    
+    [self.actionSheet addAction:cancel];
+    [self.actionSheet addAction:safari];
+}
 
 - (void)cleanUp {
     [self.webView stringByEvaluatingJavaScriptFromString:@"document.body.innerHTML = \"\";"];
@@ -167,26 +178,20 @@
     }
 }
 
-- (void)safari {
-    if (self.actionSheet) {
+- (void)safari:(UIBarButtonItem *)sender {
+    if (self.actionSheet.presentingViewController) {
         [self dismissActionSheetAnimated:YES];
     } else {
-        self.actionSheet = [[UIActionSheet alloc] initWithTitle:nil
-                                                       delegate:self
-                                              cancelButtonTitle:@"Cancel"
-                                         destructiveButtonTitle:nil
-                                              otherButtonTitles:@"Open in Safari", @"Share via Email", nil];
-
-        if ([self.actionSheet respondsToSelector:@selector(showFromBarButtonItem:animated:)]) {
-            [self.actionSheet showFromBarButtonItem:self.safariButton animated:YES];
-        } else {
-            [self.actionSheet showInView:self.webView];
+        if (self.actionSheet.popoverPresentationController) {
+            self.actionSheet.popoverPresentationController.sourceView = self.view;
+            self.actionSheet.popoverPresentationController.barButtonItem = sender;
         }
+        [self presentViewController:self.actionSheet animated:YES completion:nil];
     }
 }
 
 - (void)dismissActionSheetAnimated:(BOOL)animated {
-    [self.actionSheet dismissWithClickedButtonIndex:0 animated:animated];
+    [self.actionSheet dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (BOOL)canHandleURL:(NSURL *)URL {
@@ -251,7 +256,7 @@
     
     self.safariButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction
                                                                       target:self
-                                                                      action:@selector(safari)];
+                                                                      action:@selector(safari:)];
     
     
     UIBarButtonItem *flexiSpace1 = [[UIBarButtonItem alloc]
@@ -274,17 +279,6 @@
     browseToolbar.items = @[self.backButton, flexiSpace1, self.refreshButton, flexiSpace1, self.safariButton, flexiSpace1, spinnerItem, flexiSpace1, self.doneButton];
     
     [self.view addSubview:browseToolbar];
-}
-
-
-#pragma mark - UIActionSheetDelegate
-
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-    self.actionSheet = nil;
-    if (buttonIndex == 0) {
-        LoopMeDestinationDisplayController *displayController = (LoopMeDestinationDisplayController *)self.delegate;
-        [displayController openURLInApplication:self.URL];
-    }
 }
 
 #pragma mark - UIWebViewDelegate
@@ -347,13 +341,6 @@
     if (error.code == 102 && [error.domain isEqual:@"WebKitErrorDomain"]) return;
     
     LoopMeLogDebug(@"Ad browser got an error: %@", error);
-}
-
-#pragma mark - MailComposerDelegates
-
-- (void)mailComposeController:(MFMailComposeViewController *)controller
-          didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

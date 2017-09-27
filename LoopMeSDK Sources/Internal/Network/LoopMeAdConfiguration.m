@@ -10,6 +10,7 @@
 #import "LoopMeLogging.h"
 #import "LoopMeGlobalSettings.h"
 #import "NSString+Encryption.h"
+#import "LoopMeDefinitions.h"
 
 const int kLoopMeExpireTimeIntervalMinimum = 600;
 
@@ -85,7 +86,7 @@ const struct LoopMeTrackerNameStruct LoopMeTrackerName = {
     self.mraid = [[settings objectForKey:@"mraid"] boolValue];
     
     [[LoopMeGlobalSettings sharedInstance] setPreload25:[[settings objectForKey:@"preload25"] boolValue]];
-    [[LoopMeGlobalSettings sharedInstance] setV360:[[settings objectForKey:@"v360"] boolValue]];
+    self.v360 = [[settings objectForKey:@"v360"] boolValue];
     
     _expirationTime = [settings[@"ad_expiry_time"] integerValue];
     if (_expirationTime < kLoopMeExpireTimeIntervalMinimum) {
@@ -95,6 +96,12 @@ const struct LoopMeTrackerNameStruct LoopMeTrackerName = {
     if ([settings objectForKey:@"debug"]) {
         [LoopMeGlobalSettings sharedInstance].liveDebugEnabled = [settings[@"debug"] boolValue];
     }
+    
+    BOOL autoLoading = YES;
+    if ([settings objectForKey:@"autoloading"]) {
+        autoLoading = [[settings objectForKey:@"autoloading"] boolValue];
+    }
+    [[NSUserDefaults standardUserDefaults] setBool:autoLoading forKey:LOOPME_USERDEFAULTS_KEY_AUTOLOADING];
     
     self.measurePartners = [settings objectForKey:@"measure_partners"];
     
@@ -117,6 +124,10 @@ const struct LoopMeTrackerNameStruct LoopMeTrackerName = {
 
 - (BOOL)useTracking:(NSString *)trakerName {
     return [self.measurePartners containsObject:trakerName];
+}
+
+- (BOOL)isAutoLoading {
+    return [[NSUserDefaults standardUserDefaults] boolForKey:@"autoloading"];
 }
 
 @end

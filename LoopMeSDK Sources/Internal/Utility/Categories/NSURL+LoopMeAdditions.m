@@ -7,6 +7,7 @@
 //
 
 #import "NSURL+LoopMeAdditions.h"
+#import "NSString+Encryption.h"
 
 @implementation NSURL (LoopMeAdditions)
 
@@ -18,7 +19,7 @@
         if (keyVal.count >= 2) {
             NSString *key = keyVal[0];
             NSString *value = keyVal[1];
-            dictionary[key] = [value stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+            dictionary[key] = [value lm_stringByRemovingPercentEncoding];
         }
     }
     return dictionary;

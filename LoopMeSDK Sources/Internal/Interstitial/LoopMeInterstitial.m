@@ -24,6 +24,9 @@ static const NSTimeInterval kLoopMeTimeToReload = 900;
 <
     LoopMeInterstitialGeneralDelegate
 >
+{
+    BOOL _autoLoadingEnabled;
+}
 
 @property (nonatomic, assign, getter = isLoading) BOOL loading;
 @property (nonatomic, assign, getter = isReady) BOOL ready;
@@ -31,6 +34,8 @@ static const NSTimeInterval kLoopMeTimeToReload = 900;
 @property (nonatomic) LoopMeInterstitialGeneral *interstitial1;
 @property (nonatomic) LoopMeInterstitialGeneral *interstitial2;
 @property (nonatomic) LoopMeTargeting *targeting;
+
+@property (nonatomic, assign, getter=isShown) BOOL shown;
 
 @property (nonatomic, assign) NSInteger showCount;
 @property (nonatomic, assign) NSInteger failCount;
@@ -54,8 +59,7 @@ static const NSTimeInterval kLoopMeTimeToReload = 900;
         _interstitial1 = [LoopMeInterstitialGeneral interstitialWithAppKey:appKey delegate:self];
         _interstitial2 = [LoopMeInterstitialGeneral interstitialWithAppKey:appKey delegate:self];
         _delegate = delegate;
-        _autoLoading = YES;
-        _showCount = 0;
+        _autoLoadingEnabled = YES;
         _failCount = 0;
     }
     return self;
@@ -65,15 +69,14 @@ static const NSTimeInterval kLoopMeTimeToReload = 900;
     [LoopMeGlobalSettings sharedInstance].doNotLoadVideoWithoutWiFi = doNotLoadVideoWithoutWiFi;
 }
 
-- (void)setAutoLoading:(BOOL)autoLoading {
-    _autoLoading = autoLoading;
+- (void)setAutoLoadingEnabled:(BOOL)autoLoadingEnabled {
+    _autoLoadingEnabled = autoLoadingEnabled;
     self.failCount = 0;
-    self.showCount = 0;
 }
 
 #pragma mark - Class Methods
 
-+ (LoopMeInterstitial *)interstitialWithAppKey:(NSString *)appKey
++ (instancetype)interstitialWithAppKey:(NSString *)appKey
                                              delegate:(id<LoopMeInterstitialDelegate>)delegate {
     return [[LoopMeInterstitial alloc] initWithAppKey:appKey delegate:delegate];
 }
@@ -89,6 +92,11 @@ static const NSTimeInterval kLoopMeTimeToReload = 900;
 
 #pragma mark - Public Mehtods
 
+- (BOOL)isAutoLoadingEnabled {
+    BOOL responseAutoLoading = [[NSUserDefaults standardUserDefaults] boolForKey:LOOPME_USERDEFAULTS_KEY_AUTOLOADING];
+    return (_autoLoadingEnabled && responseAutoLoading);
+}
+
 - (void)loadAd {
     [self loadAdWithTargeting:nil];
 }
@@ -103,29 +111,35 @@ static const NSTimeInterval kLoopMeTimeToReload = 900;
         return;
     }
     [self.interstitial1 loadAdWithTargeting:targeting integrationType:integrationType];
-    if (self.isAutoLoading) {
+    if (self.isAutoLoadingEnabled) {
         [self.interstitial2 loadAdWithTargeting:targeting integrationType:integrationType];
     }
 }
 
 - (void)showFromViewController:(UIViewController *)viewController animated:(BOOL)animated {
-    if (!self.isAutoLoading || self.showCount % 2 == 0) {
-        [self.interstitial1 showFromViewController:viewController animated:animated];
-    } else {
-        [self.interstitial2 showFromViewController:viewController animated:animated];
+    if (self.isShown) {
+        LoopMeLogDebug(@"Interstitial has already shown");
+        return;
     }
-    self.showCount += 1;
+    self.shown = YES;
+    LoopMeInterstitialGeneral *interstitial = self.interstitial1.isReady ? self.interstitial1 : self.interstitial2;
+    [interstitial showFromViewController:viewController animated:animated];
 }
 
 - (void)dismissAnimated:(BOOL)animated {
+    self.shown = NO;
     [self.interstitial1 dismissAnimated:animated];
-    if (self.isAutoLoading) {
+    if (self.isAutoLoadingEnabled) {
         [self.interstitial2 dismissAnimated:animated];
     }
 }
 
 - (BOOL)isReady {
-    return self.interstitial1.isReady || self.interstitial2.isReady;
+    if (self.isAutoLoadingEnabled) {
+        return self.interstitial1.isReady || self.interstitial2.isReady;
+    } else {
+        return self.interstitial1.isReady;
+    }
 }
 
 #pragma mark - LoopMeInterstitialDelegate
@@ -138,11 +152,11 @@ static const NSTimeInterval kLoopMeTimeToReload = 900;
 
 - (void)loopMeInterstitialDidExpire:(LoopMeInterstitialGeneral *)interstitial {
     
-    if (self.autoLoading) {
+    if (self.isAutoLoadingEnabled) {
         [interstitial loadAdWithTargeting:self.targeting integrationType:kLoopMeIntegrationTypeNormal];
     }
     
-    if (!self.autoLoading || !self.isReady) {
+    if (!self.isAutoLoadingEnabled || !self.isReady) {
         if ([self.delegate respondsToSelector:@selector(loopMeInterstitialDidExpire:)]) {
             [self.delegate loopMeInterstitialDidExpire:self];
         }
@@ -163,12 +177,15 @@ static const NSTimeInterval kLoopMeTimeToReload = 900;
 }
 
 - (void)loopMeInterstitialDidDisappear:(LoopMeInterstitialGeneral *)interstitial {
+    
+    self.shown = NO;
+    
     if ([self.delegate respondsToSelector:@selector(loopMeInterstitialDidDisappear:)]) {
         [self.delegate loopMeInterstitialDidDisappear:self];
     }
     
-    if (self.autoLoading && self.failCount < 5) {
-        [interstitial loadAdWithTargeting:self.targeting integrationType:kLoopMeIntegrationTypeNormal];
+    if (self.isAutoLoadingEnabled && self.failCount < 5) {
+        [self loadAdWithTargeting:self.targeting integrationType:kLoopMeIntegrationTypeNormal];
     
         if (self.isReady) {
             if ([self.delegate respondsToSelector:@selector(loopMeInterstitialDidLoadAd:)]) {
@@ -204,12 +221,10 @@ static const NSTimeInterval kLoopMeTimeToReload = 900;
 
 - (void)loopMeInterstitial:(LoopMeInterstitialGeneral *)interstitial didFailToLoadAdWithError:(NSError *)error {
     
-    if (self.autoLoading) {
-    
+    if (self.isAutoLoadingEnabled) {
         if (self.timerToReload.isValid) {
             return;
         }
-        
         if (self.failCount >= 5) {
             self.timerToReload = [NSTimer scheduledTimerWithTimeInterval:kLoopMeTimeToReload target:self selector:@selector(reload) userInfo:nil repeats:NO];
             if ([self.delegate respondsToSelector:@selector(loopMeInterstitial:didFailToLoadAdWithError:)]) {
@@ -217,7 +232,6 @@ static const NSTimeInterval kLoopMeTimeToReload = 900;
             }
             return;
         }
-        
         self.failCount += 1;
         [interstitial loadAdWithTargeting:self.targeting integrationType:kLoopMeIntegrationTypeNormal];
     } else {

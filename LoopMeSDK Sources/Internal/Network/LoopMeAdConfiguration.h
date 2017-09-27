@@ -38,6 +38,7 @@ extern const struct LoopMeTrackerNameStruct {
 @property (nonatomic, assign) LoopMeAdOrientation orientation;
 @property (nonatomic, assign) struct LoopMeMRAIDExpandProperties expandProperties;
 @property (nonatomic, assign, getter=isMraid) BOOL mraid;
+@property (nonatomic, assign, getter=isV360) BOOL v360;
 @property (nonatomic, strong) NSDictionary *adIdsForMOAT;
 @property (nonatomic, assign) NSInteger expirationTime;
 @property (nonatomic, strong) NSString *adResponseHTMLString;

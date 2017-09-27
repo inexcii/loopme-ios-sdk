@@ -61,6 +61,7 @@ NSString * const kLoopMeInterfaceOrientationLandscape = @"l";
     parameters[@"wh"] = [self parameterForScreenHeight];
     parameters[@"width"] = [NSString stringWithFormat:@"%1.0f", size.width];
     parameters[@"height"] = [NSString stringWithFormat:@"%1.0f", size.height];
+    parameters[@"trackers"] = [self parameterForAvailableTrackers];
     
     NSString *deviceType = [LoopMeIdentityProvider deviceType];
     if (deviceType) {
@@ -188,6 +189,10 @@ NSString * const kLoopMeInterfaceOrientationLandscape = @"l";
 
 + (NSString *)parameterForScreenHeight {
     return [NSString stringWithFormat:@"%1.0f", [[UIScreen mainScreen] bounds].size.height];
+}
+
++ (NSString *)parameterForAvailableTrackers {
+    return @"[moat]";
 }
 
 + (NSString *)buildParameters:(NSMutableDictionary *)parameters {

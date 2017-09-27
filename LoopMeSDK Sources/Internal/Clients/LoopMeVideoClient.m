@@ -95,7 +95,7 @@ const CGFloat kOneFrameDuration = 0.03;
             return nil;
         }
         
-        if ([LoopMeGlobalSettings sharedInstance].isV360) {
+        if (self.delegate.isVideo360) {
             self.glkViewController = [[LoopMe360ViewController alloc] init];
             self.glkViewController.customDelegate = self;
             _videoView = self.glkViewController.view;
@@ -159,7 +159,7 @@ const CGFloat kOneFrameDuration = 0.03;
 
         }
         
-        if ([LoopMeGlobalSettings sharedInstance].isV360) {
+        if (self.delegate.isVideo360) {
             NSDictionary *pixBuffAttributes = @{(id)kCVPixelBufferPixelFormatTypeKey: @(kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange)};
             self.videoOutput = [[AVPlayerItemVideoOutput alloc] initWithPixelBufferAttributes:pixBuffAttributes];
             self.myVideoOutputQueue = dispatch_queue_create("myVideoOutputQueue", DISPATCH_QUEUE_SERIAL);
@@ -207,7 +207,7 @@ const CGFloat kOneFrameDuration = 0.03;
 - (instancetype)initWithDelegate:(id<LoopMeVideoClientDelegate>)delegate {
     if (self = [super init]) {
         _delegate = delegate;
-        if (_delegate.useMoatTracking && ![LoopMeGlobalSettings sharedInstance].isV360) {
+        if (_delegate.useMoatTracking && !self.delegate.isVideo360) {
             _moatTracker = [LOOMoatVideoTracker trackerWithPartnerCode:LOOPME_MOAT_PARTNER_CODE];
         }
         [self registerObservers];

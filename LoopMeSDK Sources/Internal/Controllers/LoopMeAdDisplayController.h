@@ -31,7 +31,6 @@
 - (void)layoutSubviews;
 - (void)layoutSubviewsToFrame:(CGRect)frame;
 - (void)stopHandlingRequests;
-- (void)continueHandlingRequests;
 - (void)moveView:(BOOL)hideWebView;
 
 - (void)expandReporting;

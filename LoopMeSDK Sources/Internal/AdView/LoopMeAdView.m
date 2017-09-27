@@ -509,7 +509,6 @@
         [self removeMaximizedView];
         return;
     }
-    [self closeAd];
     [self removeFromSuperview];
 }
 

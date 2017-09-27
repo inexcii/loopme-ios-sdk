@@ -1,6 +1,11 @@
+## Version 6.4.2 (27.09.2017)
+
+- iOS 11 compatibility updates
+- Bug fixes and performance improved.
+
 ## Version 6.4.1 (14.09.2017)
 
-- fixed MRAID ad issues. 
+- Fixed MRAID ad issues.
 
 ## Version 6.4.0 (01.09.2017)
 

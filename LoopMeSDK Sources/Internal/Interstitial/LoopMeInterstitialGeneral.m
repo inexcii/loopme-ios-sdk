@@ -193,6 +193,12 @@
         [LoopMeErrorEventSender sendError:LoopMeEventErrorTypeCustom errorMessage:@"Ad isn't ready to be displayed" appkey:self.appKey];
         return;
     }
+    
+    if (self.adInterstitialViewController.presentingViewController) {
+        LoopMeLogInfo(@"Ad has already displayed");
+        [LoopMeErrorEventSender sendError:LoopMeEventErrorTypeCustom errorMessage:@"Ad has already displayed" appkey:self.appKey];
+        return;
+    }
 
     LoopMeLogDebug(@"Interstitial ad will appear");
     if ([self.delegate respondsToSelector:@selector(loopMeInterstitialWillAppear:)]) {
@@ -205,9 +211,11 @@
     [self.adInterstitialViewController setAllowOrientationChange:self.adConfiguration.allowOrientationChange];
     [self.adDisplayController displayAd];
     self.adDisplayController.visible = YES;
+    
     [viewController presentViewController:self.adInterstitialViewController animated:animated completion:^{
         [self.adDisplayController layoutSubviews];
         LoopMeLogDebug(@"Interstitial ad did appear");
+        
         if ([self.delegate respondsToSelector:@selector(loopMeInterstitialDidAppear:)]) {
             dispatch_async(dispatch_get_main_queue(), ^{
                  [self.delegate loopMeInterstitialDidAppear:self];

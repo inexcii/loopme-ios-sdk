@@ -50,5 +50,6 @@ extern const struct LoopMeVideoStateStruct
 - (UIViewController *)viewControllerForPresentation;
 - (NSString *)appKey;
 - (BOOL)useMoatTracking;
+- (BOOL)isVideo360;
 
 @end

@@ -53,7 +53,7 @@ static NSString * const TEST_APP_KEY_INTERSTITIAL_LANDSCAPE = @"test_interstitia
 /**
  * Set YES if you want to enable automatic loading mode with high display rate performance. Default value YES.
  */
-@property (nonatomic, assign, getter = isAutoLoading) BOOL autoLoading;
+@property (nonatomic, assign, getter = isAutoLoadingEnabled) BOOL autoLoadingEnabled;
 
 /**
  * Set YES if you want to disable loading video when Wi-Fi turned off. Default value NO.
@@ -78,7 +78,7 @@ static NSString * const TEST_APP_KEY_INTERSTITIAL_LANDSCAPE = @"test_interstitia
  * @param appKey - unique identifier in LoopMe ad network.
  * @param delegate - delegate
  */
-+ (LoopMeInterstitialGeneral *)interstitialWithAppKey:(NSString *)appKey
++ (instancetype)interstitialWithAppKey:(NSString *)appKey
                                              delegate:(id<LoopMeInterstitialDelegate>)delegate;
 
 - (instancetype)initWithAppKey:(NSString *)appKey
