@@ -1,25 +1,29 @@
+## Version 6.4.3 (28.09.2017)
+
+- fixed `nil` appkey property in LoopMeInterstitial class.
+
 ## Version 6.4.2 (27.09.2017)
 
 - iOS 11 compatibility updates
-- Bug fixes and performance improved.
+- Bug fixes and performance improvements
 
 ## Version 6.4.1 (14.09.2017)
 
-- Fixed MRAID ad issues.
+- Fixed MRAID ad issues
 
 ## Version 6.4.0 (01.09.2017)
 
-- Display rate performance improvement.
-- Bug fixes and performance improved.
+- Display rate performance improvement
+- Bug fixes and performance improvements
 
 ## Version 6.3.2 (07.08.2017)
 
-- Bug fixes and performance improved.
-- Added project file for framework build.
+- Bug fixes and performance improvements
+- Added project file for framework build
 
 ## Version 6.3.1 (14.06.2017)
 
-- Changed name of resources bundle to avoid name conflicts.
+- Changed name of resources bundle to avoid name conflicts
 
 ## Version 6.3.0 (1.06.2017)
 

@@ -30,6 +30,7 @@ static const NSTimeInterval kLoopMeTimeToReload = 900;
 
 @property (nonatomic, assign, getter = isLoading) BOOL loading;
 @property (nonatomic, assign, getter = isReady) BOOL ready;
+@property (nonatomic, strong) NSString *integrationType;
 
 @property (nonatomic) LoopMeInterstitialGeneral *interstitial1;
 @property (nonatomic) LoopMeInterstitialGeneral *interstitial2;
@@ -92,6 +93,10 @@ static const NSTimeInterval kLoopMeTimeToReload = 900;
 
 #pragma mark - Public Mehtods
 
+- (NSString *)appKey {
+    return self.interstitial1.appKey ? self.interstitial1.appKey : self.interstitial2.appKey;
+}
+
 - (BOOL)isAutoLoadingEnabled {
     BOOL responseAutoLoading = [[NSUserDefaults standardUserDefaults] boolForKey:LOOPME_USERDEFAULTS_KEY_AUTOLOADING];
     return (_autoLoadingEnabled && responseAutoLoading);
@@ -110,9 +115,11 @@ static const NSTimeInterval kLoopMeTimeToReload = 900;
     if (self.failCount >= 5) {
         return;
     }
-    [self.interstitial1 loadAdWithTargeting:targeting integrationType:integrationType];
+    
+    self.integrationType = integrationType;
+    [self.interstitial1 loadAdWithTargeting:targeting integrationType:self.integrationType];
     if (self.isAutoLoadingEnabled) {
-        [self.interstitial2 loadAdWithTargeting:targeting integrationType:integrationType];
+        [self.interstitial2 loadAdWithTargeting:targeting integrationType:self.integrationType];
     }
 }
 
@@ -153,7 +160,7 @@ static const NSTimeInterval kLoopMeTimeToReload = 900;
 - (void)loopMeInterstitialDidExpire:(LoopMeInterstitialGeneral *)interstitial {
     
     if (self.isAutoLoadingEnabled) {
-        [interstitial loadAdWithTargeting:self.targeting integrationType:kLoopMeIntegrationTypeNormal];
+        [interstitial loadAdWithTargeting:self.targeting integrationType:self.integrationType];
     }
     
     if (!self.isAutoLoadingEnabled || !self.isReady) {
@@ -185,7 +192,7 @@ static const NSTimeInterval kLoopMeTimeToReload = 900;
     }
     
     if (self.isAutoLoadingEnabled && self.failCount < 5) {
-        [self loadAdWithTargeting:self.targeting integrationType:kLoopMeIntegrationTypeNormal];
+        [self loadAdWithTargeting:self.targeting integrationType:self.integrationType];
     
         if (self.isReady) {
             if ([self.delegate respondsToSelector:@selector(loopMeInterstitialDidLoadAd:)]) {
@@ -233,7 +240,7 @@ static const NSTimeInterval kLoopMeTimeToReload = 900;
             return;
         }
         self.failCount += 1;
-        [interstitial loadAdWithTargeting:self.targeting integrationType:kLoopMeIntegrationTypeNormal];
+        [interstitial loadAdWithTargeting:self.targeting integrationType:self.integrationType];
     } else {
         if (!self.isReady) {
             if ([self.delegate respondsToSelector:@selector(loopMeInterstitial:didFailToLoadAdWithError:)]) {
