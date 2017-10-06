@@ -6,12 +6,11 @@
 //  Copyright (c) 2015 injectios. All rights reserved.
 //
 
-#import "MopubLoopMeNativeEvent.h"
 #import "LoopMeAdView.h"
-#import "MPNativeAd.h"
 #import "LoopMeError.h"
 #import "LoopMeLogging.h"
-#import "LoopMeAdView.h"
+#import "MopubLoopMeNativeEvent.h"
+#import "MPNativeAd.h"
 #import "MopubLoopMeNativeAd.h"
 #import "MPError.h"
 

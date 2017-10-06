@@ -7,25 +7,7 @@
 #import "MopubLoopMeInterstitialAdapter.h"
 #import "MPLogging.h"
 #import "MPError.h"
-#import "MPInstanceProvider.h"
-
-@interface MPInstanceProvider (LoopMeInterstitials)
-
-- (LoopMeInterstitial *)buildLoopMeInterstitialWithAppKey:(NSString *)appKey
-                                                 delegate:(id<LoopMeInterstitialDelegate>)delegate;
-
-@end
-
-@implementation MPInstanceProvider (LoopMeInterstitials)
-
-- (LoopMeInterstitial *)buildLoopMeInterstitialWithAppKey:(NSString *)appKey
-                                                 delegate:(id<LoopMeInterstitialDelegate>)delegate
-{
-    return [LoopMeInterstitial interstitialWithAppKey:appKey
-                                             delegate:delegate];
-}
-
-@end
+#import "MPInstanceProvider+LoopMe.h"
 
 @implementation MopubLoopMeInterstitialAdapter
 
@@ -39,8 +21,10 @@
     }
     
     NSString *appKey = [info objectForKey:@"app_key"];
-    self.loopmeInterstitial = [[MPInstanceProvider sharedProvider] buildLoopMeInterstitialWithAppKey:appKey
-                                                                                            delegate:self];
+    if (!self.loopmeInterstitial) {
+        self.loopmeInterstitial = [[MPInstanceProvider sharedProvider] buildLoopMeInterstitialWithAppKey:appKey delegate:self];
+    }
+        
     if (!self.loopmeInterstitial) {
         // MPError with invalid error code, in fact old iOS version
         [self.delegate interstitialCustomEvent:self didFailToLoadAdWithError:[MOPUBError errorWithCode:MOPUBErrorAdapterInvalid]];
