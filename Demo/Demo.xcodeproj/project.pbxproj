@@ -46,7 +46,8 @@
 		477789101D2F8805003533BC /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4777890F1D2F8805003533BC /* GLKit.framework */; };
 		477789121D2F880B003533BC /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 477789111D2F880B003533BC /* OpenGLES.framework */; };
 		477789141D2F8862003533BC /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 477789131D2F8862003533BC /* CoreMotion.framework */; };
-		47CB8C091F7BE15F00F68693 /* LoopMeSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47CB8C081F7BE09F00F68693 /* LoopMeSDK.framework */; };
+		47CBA63A1FD00A9F0058D220 /* LoopMeResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 47CBA6381FD00A9E0058D220 /* LoopMeResources.bundle */; };
+		47CBA63B1FD00A9F0058D220 /* LoopMeSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47CBA6391FD00A9E0058D220 /* LoopMeSDK.framework */; };
 		6F71AA7819910FD1009F6D99 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F71AA7719910FD1009F6D99 /* Foundation.framework */; };
 		6F71AA7A19910FD1009F6D99 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F71AA7919910FD1009F6D99 /* CoreGraphics.framework */; };
 		6F71AA7C19910FD1009F6D99 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F71AA7B19910FD1009F6D99 /* UIKit.framework */; };
@@ -151,7 +152,8 @@
 		4777890F1D2F8805003533BC /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		477789111D2F880B003533BC /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		477789131D2F8862003533BC /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
-		47CB8C081F7BE09F00F68693 /* LoopMeSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LoopMeSDK.framework; path = ../LoopMeSDK.framework; sourceTree = "<group>"; };
+		47CBA6381FD00A9E0058D220 /* LoopMeResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = LoopMeResources.bundle; sourceTree = "<group>"; };
+		47CBA6391FD00A9E0058D220 /* LoopMeSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LoopMeSDK.framework; sourceTree = "<group>"; };
 		6F71AA7419910FD1009F6D99 /* Demo Trailer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Demo Trailer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F71AA7719910FD1009F6D99 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6F71AA7919910FD1009F6D99 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -205,7 +207,7 @@
 				6F71AA7819910FD1009F6D99 /* Foundation.framework in Frameworks */,
 				477789141D2F8862003533BC /* CoreMotion.framework in Frameworks */,
 				6F71AA7A19910FD1009F6D99 /* CoreGraphics.framework in Frameworks */,
-				47CB8C091F7BE15F00F68693 /* LoopMeSDK.framework in Frameworks */,
+				47CBA63B1FD00A9F0058D220 /* LoopMeSDK.framework in Frameworks */,
 				477789121D2F880B003533BC /* OpenGLES.framework in Frameworks */,
 				477789101D2F8805003533BC /* GLKit.framework in Frameworks */,
 			);
@@ -335,6 +337,24 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		47CBA6361FD00A9E0058D220 /* LoopMeSDK.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				47CBA6371FD00A9E0058D220 /* Resources */,
+				47CBA6391FD00A9E0058D220 /* LoopMeSDK.framework */,
+			);
+			name = LoopMeSDK.embeddedframework;
+			path = ../LoopMeSDK.embeddedframework;
+			sourceTree = "<group>";
+		};
+		47CBA6371FD00A9E0058D220 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				47CBA6381FD00A9E0058D220 /* LoopMeResources.bundle */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		6F71AA6B19910FD1009F6D99 = {
 			isa = PBXGroup;
 			children = (
@@ -357,7 +377,7 @@
 		6F71AA7619910FD1009F6D99 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				47CB8C081F7BE09F00F68693 /* LoopMeSDK.framework */,
+				47CBA6361FD00A9E0058D220 /* LoopMeSDK.embeddedframework */,
 				477789131D2F8862003533BC /* CoreMotion.framework */,
 				477789111D2F880B003533BC /* OpenGLES.framework */,
 				4777890F1D2F8805003533BC /* GLKit.framework */,
@@ -512,6 +532,7 @@
 				EFDB8DCF1AA86BD2005CE218 /* bg_iPad_main@2x.png in Resources */,
 				6F71AA9319910FD1009F6D99 /* Images.xcassets in Resources */,
 				0120CD4019BDD99000C7F0D8 /* icon_114x114.png in Resources */,
+				47CBA63A1FD00A9F0058D220 /* LoopMeResources.bundle in Resources */,
 				6F71AA8219910FD1009F6D99 /* InfoPlist.strings in Resources */,
 				0120CD4A19BDDA8200C7F0D8 /* splash_768x1024.png in Resources */,
 				EFDB8DD61AA878B6005CE218 /* texture_highlighted.png in Resources */,
@@ -713,15 +734,15 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_RESOURCE_RULES_PATH = "$(SDKROOT)/ResourceRules.plist";
 				DEVELOPMENT_TEAM = Q876VLK88R;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)/LoopMeSDK.embeddedframework";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "Demo/Demo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				ONLY_ACTIVE_ARCH = NO;
-				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.loopmemedia.Demo-Trailer.trailer";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.loopmemedia.DemoTrailer;
 				PRODUCT_NAME = "$(TARGET_NAME) Trailer";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -735,15 +756,15 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_RESOURCE_RULES_PATH = "$(SDKROOT)/ResourceRules.plist";
 				DEVELOPMENT_TEAM = Q876VLK88R;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)/LoopMeSDK.embeddedframework";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "Demo/Demo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.loopmemedia.Demo-Trailer.trailer";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.loopmemedia.DemoTrailer;
 				PRODUCT_NAME = "$(TARGET_NAME) Trailer";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
