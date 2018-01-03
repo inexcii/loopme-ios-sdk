@@ -489,7 +489,7 @@ const CGFloat kOneFrameDuration = 0.03;
     }
     
     if (self.delegate.useMoatTracking) {
-        NSDictionary *adIds = [LoopMeGlobalSettings sharedInstance].adIds[self.appKey];
+        NSDictionary *adIds = [[LoopMeGlobalSettings sharedInstance].adIds objectForKey:self.appKey];
         if (self.playerLayer) {
             [self.moatTracker trackVideoAd:adIds usingAVMoviePlayer:self.player withLayer:self.playerLayer withContainingView:self.videoView];
         } else {

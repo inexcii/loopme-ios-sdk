@@ -9,6 +9,8 @@
 #import "NSURL+LoopMeAdditions.h"
 #import "NSString+Encryption.h"
 
+static const NSUInteger kLoopMeMaxDecodeIteration = 5;
+
 @implementation NSURL (LoopMeAdditions)
 
 - (NSDictionary *)lm_toDictionary {
@@ -23,6 +25,17 @@
         }
     }
     return dictionary;
+}
+
++ (NSURL *)lm_urlWithEncodedString:(NSString *)string {
+    for (int i = 0; i < kLoopMeMaxDecodeIteration; i++) {
+        if ([string containsString:@"%"]) {
+            string = [string stringByRemovingPercentEncoding];
+        } else {
+            break;
+        }
+    }
+    return [self URLWithString:string];
 }
 
 @end

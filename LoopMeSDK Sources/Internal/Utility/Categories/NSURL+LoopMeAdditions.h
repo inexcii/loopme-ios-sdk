@@ -11,5 +11,6 @@
 @interface NSURL (LoopMeAdditions)
 
 - (NSDictionary *)lm_toDictionary;
++ (NSURL *)lm_urlWithEncodedString:(NSString *)string;
 
 @end

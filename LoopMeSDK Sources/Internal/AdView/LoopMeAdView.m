@@ -107,6 +107,7 @@
     if (!isMaximized) {
         if (self.adConfiguration.isMraid) {
             [self.adDisplayController setExpandProperties:self.adConfiguration];
+            [self.adDisplayController setOrientationProperties:nil];
         }
         [self.maximizedController show];
         [self.adDisplayController moveView:NO];
@@ -135,10 +136,18 @@
     [super willMoveToSuperview:newSuperview];
     if (!newSuperview) {
         [self closeAd];
+        
+        if ([self.delegate respondsToSelector:@selector(loopMeAdViewWillDisappear:)]) {
+            [self.delegate loopMeAdViewWillDisappear:self];
+        }
     } else {
         if (!self.isReady) {
             [LoopMeErrorEventSender sendError:LoopMeEventErrorTypeCustom errorMessage:@"Banner added to view, but wasn't ready to be displayed" appkey:self.appKey];
             self.needsToBeDisplayedWhenReady = YES;
+        }
+        
+        if ([self.delegate respondsToSelector:@selector(loopMeAdViewWillAppear:)]) {
+            [self.delegate loopMeAdViewWillAppear:self];
         }
     }
 }
@@ -345,6 +354,7 @@
 
 - (void)closeAd {
     [self.minimizedView removeFromSuperview];
+    [self.maximizedController hide];
     [self.adDisplayController closeAd];
     self.ready = NO;
     self.loading = NO;
@@ -428,10 +438,14 @@
     [self.adDisplayController moveView:NO];
 }
 
+- (void)maximizedControllerWillTransitionToSize:(CGSize)size {
+    [self.adDisplayController resizeTo:size];
+}
+
 #pragma mark - LoopMeAdDisplayControllerDelegate
 
 - (UIView *)containerView {
-    BOOL isMaximized = [self.maximizedController isBeingPresented];
+    BOOL isMaximized = [self.maximizedController presentingViewController] != nil;
     
     if (self.isMinimized) {
         return self.minimizedView;
@@ -443,6 +457,10 @@
 }
 
 - (UIViewController *)viewControllerForPresentation {
+    if ([self.maximizedController presentingViewController]) {
+        return self.maximizedController;
+    }
+    
     return self.delegate.viewControllerForPresentation;
 }
 
@@ -467,7 +485,7 @@
 }
 
 - (void)adDisplayControllerDidReceiveTap:(LoopMeAdDisplayController *)adDisplayController {
-    if ([self isMaximizedControllerIsPresented]) {
+    if ([self isMaximizedControllerIsPresented] && !self.adConfiguration.isMraid) {
         [self removeMaximizedView];
     }
     if ([self.delegate respondsToSelector:@selector(loopMeAdViewDidReceiveTap:)]) {
@@ -519,4 +537,19 @@
 - (void)adDisplayControllerWillCollapse:(LoopMeAdDisplayController *)adDisplayController {
     [self removeMaximizedView];
 }
+
+- (void)adDisplayControllerAllowOrientationChange:(BOOL)allowOrientationChange orientation:(NSInteger)orientation {
+    [self.maximizedController setAllowOrientationChange:allowOrientationChange];
+    [self.maximizedController setOrientation:orientation];
+    [self.maximizedController forceChangeOrientation];
+}
+
+- (void)adDisplayController:(LoopMeAdDisplayController *)adDisplayController willResizeAd:(CGSize)size {
+    float x = self.frame.origin.x;
+    float y = self.frame.origin.y;
+    
+    CGRect newFrame = CGRectMake(x, y, size.width, size.height);
+    self.frame = newFrame;
+}
+
 @end

@@ -183,7 +183,7 @@ NSTimeInterval const kLoopMeVideoCacheExpiredTime = (-1*32*60*60);
     if (error.code == NSURLErrorTimedOut) {
         [LoopMeErrorEventSender sendError:LoopMeEventErrorTypeBadAsset errorMessage:[NSString stringWithFormat:@"Time out for: %@", self.videoURL.absoluteString] appkey:self.delegate.appKey];
     } else {
-        [LoopMeErrorEventSender sendError:LoopMeEventErrorTypeBadAsset errorMessage:[NSString stringWithFormat:@"Response code %ld: %@", (long)error.code, self.videoURL.absoluteString] appkey:self.delegate.appKey];
+        [LoopMeErrorEventSender sendError:LoopMeEventErrorTypeBadAsset errorMessage:[NSString stringWithFormat:@"Error code %ld: %@", (long)error.code, self.videoURL.absoluteString] appkey:self.delegate.appKey];
     }
     
     [self.delegate videoManager:self didFailLoadWithError:error];

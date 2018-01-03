@@ -92,11 +92,11 @@ const struct LoopMeMRAIDStateStruct LoopMeMRAIDState =
 - (void)processCommand:(NSString *)command withParams:(NSDictionary *)params {
     
     if ([command isEqualToString:_kLoopMeMRAIDOpenCommand]) {
-        [self.delegate mraidClient:self shouldOpenURL:[NSURL URLWithString:params[@"url"]]];
+        [self.delegate mraidClient:self shouldOpenURL:[NSURL lm_urlWithEncodedString:params[@"url"]]];
     } else if ([command isEqualToString:_kLoopMeMRAIDPlayVideoCommand]) {
-        [self.delegate mraidClient:self sholdPlayVideo:[NSURL URLWithString:params[@"url"]]];
+        [self.delegate mraidClient:self sholdPlayVideo:[NSURL lm_urlWithEncodedString:params[@"url"]]];
     } else if ([command isEqualToString:_kLoopMeMRAIDResizeCommand]) {
-
+        [self.delegate mraidClientDidResizeAd:self];
     } else if ([command isEqualToString:_kLoopMeMRAIDCustomCloseCommand]) {
         [self.delegate mraidClient:self useCustomClose:[params[@"useCustomClose"] boolValue]];
     } else if ([command isEqualToString:_kLoopMeMRAIDSetOrientationPropertiesCommand]) {
@@ -131,9 +131,18 @@ const struct LoopMeMRAIDStateStruct LoopMeMRAIDState =
     return [NSJSONSerialization JSONObjectWithData:[stringOrientationProperties dataUsingEncoding:NSUTF8StringEncoding] options:0 error:nil];
 }
 
+- (NSDictionary *)getResizeProperties {
+    NSString *stringOrientationProperties = [self.webViewClient stringByEvaluatingJavaScriptFromString:@"mraid.getStringResizeProperties()"];
+    return [NSJSONSerialization JSONObjectWithData:[stringOrientationProperties dataUsingEncoding:NSUTF8StringEncoding] options:0 error:nil];
+}
+
 - (NSDictionary *)getExpandProperties {
     NSString *stringExpandProperties = [self.webViewClient stringByEvaluatingJavaScriptFromString:@"mraid.getStringExpandProperties()"];
     return [NSJSONSerialization JSONObjectWithData:[stringExpandProperties dataUsingEncoding:NSUTF8StringEncoding] options:0 error:nil];
+}
+
+- (NSString *)getState {
+   return [self.webViewClient stringByEvaluatingJavaScriptFromString:@"mraid.getStateString()"];
 }
 
 - (void)executeEvent:(NSString *)event params:(NSArray *)params {

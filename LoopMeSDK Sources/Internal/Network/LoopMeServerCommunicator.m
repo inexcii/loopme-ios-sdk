@@ -90,7 +90,9 @@ const NSTimeInterval kLoopMeAdRequestTimeOutInterval = 20.0;
         if ([response respondsToSelector:@selector(statusCode)]) {
             NSInteger statusCode = [(NSHTTPURLResponse *)response statusCode];
             if (statusCode != 200) {
-                [LoopMeErrorEventSender sendError:LoopMeEventErrorTypeServer errorMessage:[NSString stringWithFormat:@"Response code: %ld", (long)error.code] appkey:[self appKey]];
+                if (statusCode != 204) {
+                    [LoopMeErrorEventSender sendError:LoopMeEventErrorTypeServer errorMessage:[NSString stringWithFormat:@"Response code: %ld", statusCode] appkey:[self appKey]];
+                }
                 safeSelf.loading = NO;
                 [safeSelf.delegate serverCommunicator:safeSelf didFailWithError:[LoopMeError errorForStatusCode:statusCode]];
                 return;

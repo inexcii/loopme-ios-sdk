@@ -32,6 +32,7 @@
 - (void)layoutSubviewsToFrame:(CGRect)frame;
 - (void)stopHandlingRequests;
 - (void)moveView:(BOOL)hideWebView;
+- (void)setOrientationProperties:(NSDictionary *)orientationProperties;
 
 - (void)expandReporting;
 - (void)collapseReporting;
@@ -55,5 +56,9 @@
 - (UIViewController *)viewControllerForPresentation;
 - (UIView *)containerView;
 - (NSString *)appKey;
+
+@optional
+- (void)adDisplayController:(LoopMeAdDisplayController *)adDisplayController allowOrientationChange:(BOOL)allowOrientationChange orientation:(NSInteger)orientation;
+- (void)adDisplayController:(LoopMeAdDisplayController *)adDisplayController willResizeAd:(CGSize)size;
 
 @end

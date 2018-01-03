@@ -183,4 +183,16 @@ static NSString * const TEST_APP_KEY_MPU = @"test_mpu";
  */
 - (void)loopMeAdViewWillLeaveApplication:(LoopMeAdView *)adView;
 
+/**
+ * Triggered when the ad will move to superview
+ * @param adView - object the sender of message
+ */
+- (void)loopMeAdViewWillAppear:(LoopMeAdView *)adView;
+
+/**
+ * Triggered when the ad will remove from superview
+ * @param adView - object the sender of message
+ */
+- (void)loopMeAdViewWillDisappear:(LoopMeAdView *)adView;
+
 @end

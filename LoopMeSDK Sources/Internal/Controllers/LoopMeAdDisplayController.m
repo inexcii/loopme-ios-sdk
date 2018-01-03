@@ -49,6 +49,8 @@ NSString * const kLoopMeBaseURL = @"http://loopme.me/";
 @property (nonatomic, strong) LoopMeDestinationDisplayController *destinationDisplayClient;
 @property (nonatomic, strong) NSTimer *webViewTimeOutTimer;
 @property (nonatomic, strong) LoopMeAdConfiguration *configuration;
+@property (nonatomic, strong) NSDictionary *orientationProperties;
+@property (nonatomic, assign) CGSize originalSize;
 
 @property (nonatomic, assign, getter=isFirstCallToExpand) BOOL firstCallToExpand;
 @property (nonatomic, assign, getter=isUseCustomClose) BOOL useCustomClose;
@@ -125,6 +127,7 @@ NSString * const kLoopMeBaseURL = @"http://loopme.me/";
 - (UIButton *)closeButton {
     if (!_closeButton) {
         _closeButton = [[LoopMeCloseButton alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
+        _closeButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleBottomMargin;
         [_closeButton addTarget:self action:@selector(mraidClientDidReceiveCloseCommand:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _closeButton;
@@ -251,14 +254,53 @@ NSString * const kLoopMeBaseURL = @"http://loopme.me/";
     };
     
     JSContext *jsContext = [self.webView valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"];
-    jsContext[@"console"][@"log"] = log;
     jsContext[@"console"][@"error"] = log;
-    jsContext[@"console"][@"debug"] = log;
     
     __weak LoopMeAdDisplayController *wekSelf = self;
     [jsContext setExceptionHandler:^(JSContext *context, JSValue *value) {
         [LoopMeErrorEventSender sendError:LoopMeEventErrorTypeJS errorMessage:[value toString] appkey:wekSelf.appKey];
     }];
+}
+
+- (UIInterfaceOrientation)calculatePreferredOrientstion:(BOOL)allowOrientationChange orientationProperties:(NSDictionary *)orientationProperties {
+    
+    UIInterfaceOrientation preferredOrientation;
+    UIInterfaceOrientation currentInterfaceOrientation = [[UIApplication sharedApplication] statusBarOrientation];
+    
+    if (allowOrientationChange) {
+        preferredOrientation = [[UIApplication sharedApplication] statusBarOrientation];
+    } else {
+        if ([orientationProperties[@"forceOrientation"] isEqualToString:@"portrait"]) {
+            if (UIInterfaceOrientationIsPortrait(currentInterfaceOrientation)) {
+                // this will accomodate both portrait and portrait upside down
+                preferredOrientation = currentInterfaceOrientation;
+            } else {
+                preferredOrientation = UIInterfaceOrientationPortrait;
+            }
+        } else if ([orientationProperties[@"forceOrientation"] isEqualToString:@"landscape"]) {
+            if (UIInterfaceOrientationIsLandscape(currentInterfaceOrientation)) {
+                // this will accomodate both landscape left and landscape right
+                preferredOrientation = currentInterfaceOrientation;
+            } else {
+                preferredOrientation = UIInterfaceOrientationLandscapeLeft;
+            }
+        } else {
+            preferredOrientation = currentInterfaceOrientation;
+        }
+    }
+    return preferredOrientation;
+}
+
+- (CGRect)adjustFrame:(CGRect)frame {
+    CGRect adjustedFrame = frame;
+    if ([self.delegate isKindOfClass:[LoopMeInterstitial class]]) {
+        if ((self.configuration.orientation == LoopMeAdOrientationLandscape && adjustedFrame.size.width < adjustedFrame.size.height) || (self.configuration.orientation == LoopMeAdOrientationPortrait && adjustedFrame.size.width > adjustedFrame.size.height)) {
+            adjustedFrame = CGRectMake(adjustedFrame.origin.x, adjustedFrame.origin.y, adjustedFrame.size.height, adjustedFrame.size.width);
+        }
+    } else if([self.delegate respondsToSelector:@selector(isMaximizedControllerIsPresented)] && [self.delegate performSelector:@selector(isMaximizedControllerIsPresented)]) {
+        adjustedFrame = CGRectMake(adjustedFrame.origin.x, adjustedFrame.origin.y, adjustedFrame.size.height, adjustedFrame.size.width);
+    }
+    return adjustedFrame;
 }
 
 #pragma mark - Public
@@ -326,13 +368,9 @@ NSString * const kLoopMeBaseURL = @"http://loopme.me/";
     self.videoClient.viewController = [self.delegate viewControllerForPresentation];
     self.webView.frame = self.delegate.containerView.bounds;
     
-    CGRect adjustedFrame = self.webView.frame;
-
-    if (self.configuration.format == LoopMeAdFormatInterstitial) {
-        if ((self.configuration.orientation == LoopMeAdOrientationLandscape && adjustedFrame.size.width < adjustedFrame.size.height) || (self.configuration.orientation == LoopMeAdOrientationPortrait && adjustedFrame.size.width > adjustedFrame.size.height)) {
-            adjustedFrame = CGRectMake(adjustedFrame.origin.x, adjustedFrame.origin.y, adjustedFrame.size.height, adjustedFrame.size.width);
-      }
-    }
+    self.webView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+    
+    CGRect adjustedFrame = [self adjustFrame:self.webView.frame];
     
     [self.videoClient adjustViewToFrame:adjustedFrame];
     [self.delegate.containerView addSubview:self.webView];
@@ -340,11 +378,17 @@ NSString * const kLoopMeBaseURL = @"http://loopme.me/";
     [self.videoClient willAppear];
     
     if (self.configuration.isMraid) {
+        
+        self.originalSize = adjustedFrame.size;
+        
         NSString *placementType = [self.delegate isKindOfClass:[LoopMeInterstitial class]] ? @"interstitial" : @"inline";
         [self.mraidClient executeEvent:LoopMeMRAIDFunctions.setPlacementType params:@[placementType]];
         [self.mraidClient executeEvent:LoopMeMRAIDFunctions.setDefaultPosition params:@[@0, @0, @(adjustedFrame.size.width), @(adjustedFrame.size.height)]];
-        [self.mraidClient executeEvent:LoopMeMRAIDFunctions.setMaxSize params:@[@(adjustedFrame.size.width),@(adjustedFrame.size.height)]];
-        [self.mraidClient executeEvent:LoopMeMRAIDFunctions.setScreenSize params:@[@(adjustedFrame.size.width), @(adjustedFrame.size.height)]];
+        
+        CGSize windowSize = [[UIApplication sharedApplication] keyWindow].bounds.size;
+        [self.mraidClient executeEvent:LoopMeMRAIDFunctions.setMaxSize params:@[@(windowSize.width),@(windowSize.height)]];
+        [self.mraidClient executeEvent:LoopMeMRAIDFunctions.setScreenSize params:@[@(windowSize.width), @(windowSize.height)]];
+        
         [self.mraidClient executeEvent:LoopMeMRAIDFunctions.stateChange params:@[LoopMeMRAIDState.defaultt]];
         [self.mraidClient executeEvent:LoopMeMRAIDFunctions.ready params:nil];
         
@@ -402,8 +446,9 @@ NSString * const kLoopMeBaseURL = @"http://loopme.me/";
 - (void)expandReporting {
     if (self.configuration.isMraid) {
         [self.mraidClient executeEvent:LoopMeMRAIDFunctions.stateChange params:@[LoopMeMRAIDState.expanded]];
+        CGRect adjustedFrame = [self adjustFrame:self.webView.frame];
+         [self.mraidClient executeEvent:LoopMeMRAIDFunctions.sizeChange params:@[@(adjustedFrame.size.width), @(adjustedFrame.size.height)]];
     }
-
     self.closeButton.hidden = self.configuration.expandProperties.useCustomClose;
     [self.JSClient setFullScreenModeEnabled:YES];
 }
@@ -415,10 +460,34 @@ NSString * const kLoopMeBaseURL = @"http://loopme.me/";
 
 - (void)resizeTo:(CGSize)size {
     if (self.configuration.isMraid) {
-        self.closeButton.frame = [self frameForCloseButton:CGRectMake(0, 0, size.width, size.height)];
-        [self.mraidClient executeEvent:LoopMeMRAIDFunctions.setMaxSize params:@[@(size.width),@(size.height)]];
-        [self.mraidClient executeEvent:LoopMeMRAIDFunctions.setScreenSize params:@[@(size.width), @(size.height)]];
         [self.mraidClient executeEvent:LoopMeMRAIDFunctions.sizeChange params:@[@(size.width),@(size.height)]];
+        if ([self.delegate respondsToSelector:@selector(adDisplayController:willResizeAd:)]) {
+            [self.delegate adDisplayController:self willResizeAd:size];
+        }
+    }
+}
+
+- (void)setOrientationProperties:(NSDictionary *)orientationProperties {
+    if (orientationProperties) {
+        _orientationProperties = orientationProperties;
+    }
+    BOOL allowOrientationChange = [self.orientationProperties[@"allowOrientationChange"] isEqualToString:@"true"] ? YES : NO;
+    UIInterfaceOrientation preferredOrientation = [self calculatePreferredOrientstion:allowOrientationChange orientationProperties:self.orientationProperties];
+    LoopMeAdOrientation adOrientation;
+    if (UIInterfaceOrientationIsPortrait(preferredOrientation)) {
+        adOrientation = LoopMeAdOrientationPortrait;
+    } else {
+        adOrientation = LoopMeAdOrientationLandscape;
+    }
+    
+    if ([[self.delegate viewControllerForPresentation] isKindOfClass:[LoopMeInterstitialViewController class]]) {
+        [(LoopMeInterstitialViewController *)[self.delegate viewControllerForPresentation] setAllowOrientationChange:allowOrientationChange];
+        [(LoopMeInterstitialViewController *)[self.delegate viewControllerForPresentation] setOrientation:adOrientation];
+        [(LoopMeInterstitialViewController *)[self.delegate viewControllerForPresentation] forceChangeOrientation];
+    }
+    
+    if ([self.delegate respondsToSelector:@selector(adDisplayController:allowOrientationChange:orientation:)]) {
+        [self.delegate adDisplayController:self allowOrientationChange:allowOrientationChange orientation:adOrientation];
     }
 }
 
@@ -555,47 +624,15 @@ NSString * const kLoopMeBaseURL = @"http://loopme.me/";
 }
 
 - (void)mraidClient:(LoopMeMRAIDClient *)client setOrientationProperties:(NSDictionary *)orientationProperties {
-    UIInterfaceOrientation preferredOrientation;
-    UIInterfaceOrientation currentInterfaceOrientation = [[UIApplication sharedApplication] statusBarOrientation];
-    
-    BOOL allowOrientationChange = [orientationProperties[@"allowOrientationChange"] isEqualToString:@"true"] ? YES : NO;
-    
-    if (allowOrientationChange) {
-        preferredOrientation = [[UIApplication sharedApplication] statusBarOrientation];
-    } else {
-        if ([orientationProperties[@"forceOrientation"] isEqualToString:@"portrait"]) {
-            if (UIInterfaceOrientationIsPortrait(currentInterfaceOrientation)) {
-                // this will accomodate both portrait and portrait upside down
-                preferredOrientation = currentInterfaceOrientation;
-            } else {
-                preferredOrientation = UIInterfaceOrientationPortrait;
-            }
-        } else if ([orientationProperties[@"forceOrientation"] isEqualToString:@"landscape"]) {
-            if (UIInterfaceOrientationIsLandscape(currentInterfaceOrientation)) {
-                // this will accomodate both landscape left and landscape right
-                preferredOrientation = currentInterfaceOrientation;
-            } else {
-                preferredOrientation = UIInterfaceOrientationLandscapeLeft;
-            }
-        } else {
-            preferredOrientation = currentInterfaceOrientation;
-        }
-    }
-    
-    LoopMeAdOrientation adOrientation;
-    if (UIInterfaceOrientationIsPortrait(preferredOrientation)) {
-        adOrientation = LoopMeAdOrientationPortrait;
-    } else {
-        adOrientation = LoopMeAdOrientationLandscape;
-    }
-    
-    
-    [(LoopMeInterstitialViewController *)[self.delegate viewControllerForPresentation] setAllowOrientationChange:allowOrientationChange];
-    [(LoopMeInterstitialViewController *)[self.delegate viewControllerForPresentation] setOrientation:adOrientation];
-    [(LoopMeInterstitialViewController *)[self.delegate viewControllerForPresentation] forceChangeOrientation];
+    [self setOrientationProperties:orientationProperties];
 }
 
 - (void)mraidClientDidReceiveCloseCommand:(LoopMeMRAIDClient *)client {
+    if ([[self.mraidClient getState] isEqualToString:LoopMeMRAIDState.resized]) {
+        [self resizeTo:self.originalSize];
+        [self.mraidClient executeEvent:LoopMeMRAIDFunctions.stateChange params:@[LoopMeMRAIDState.defaultt]];
+        return;
+    }
     if ([self.delegate respondsToSelector:@selector(adDisplayControllerShouldCloseAd:)]) {
         [self.delegate adDisplayControllerShouldCloseAd:self];
     }
@@ -605,6 +642,15 @@ NSString * const kLoopMeBaseURL = @"http://loopme.me/";
     if ([self.delegate respondsToSelector:@selector(adDisplayControllerWillExpandAd:)]) {
         [self.delegate adDisplayControllerWillExpandAd:self];
     }
+}
+
+- (void)mraidClientDidResizeAd:(LoopMeMRAIDClient *)client {
+    NSDictionary *resizeProperties = [self.mraidClient getResizeProperties];
+    CGFloat width = [[resizeProperties objectForKey:@"width"] floatValue];
+    CGFloat height = [[resizeProperties objectForKey:@"height"] floatValue];
+    CGSize newSize = CGSizeMake(width, height);
+    
+    [self resizeTo:newSize];
 }
 
 #pragma mark - VideoClientDelegate

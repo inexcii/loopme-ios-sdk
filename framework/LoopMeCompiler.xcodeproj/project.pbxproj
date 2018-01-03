@@ -92,6 +92,7 @@
 		473CB0B81F7E8B7B003431CD /* LoopMeResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4798C9381F59986500B3A947 /* LoopMeResources.bundle */; };
 		474546211F8274BB00DBE340 /* NSData+LoopMeAES128.m in Sources */ = {isa = PBXBuildFile; fileRef = 4798C93E1F59986500B3A947 /* NSData+LoopMeAES128.m */; };
 		474546221F8274C000DBE340 /* NSData+LoopMeAES128.h in Headers */ = {isa = PBXBuildFile; fileRef = 4798C93D1F59986500B3A947 /* NSData+LoopMeAES128.h */; };
+		478E11761FFD222200F6CFFF /* LoopMeOrientationViewControllerProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 478E11751FFD222200F6CFFF /* LoopMeOrientationViewControllerProtocol.h */; };
 		4798C9761F59986500B3A947 /* LoopMeAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4798C90D1F59986500B3A947 /* LoopMeAdView.m */; };
 		4798C9771F59986500B3A947 /* LoopMeMaximizedViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4798C90F1F59986500B3A947 /* LoopMeMaximizedViewController.h */; };
 		4798C9781F59986500B3A947 /* LoopMeMaximizedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4798C9101F59986500B3A947 /* LoopMeMaximizedViewController.m */; };
@@ -182,6 +183,7 @@
 /* Begin PBXFileReference section */
 		473CB0BE1F7E8B7B003431CD /* LoopMeSDKUnity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoopMeSDKUnity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		473CB0C41F7E8B7B003431CD /* LoopMeCompilerUnity-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "LoopMeCompilerUnity-Info.plist"; path = "/Users/bohdan/Work/loopme-ios-sdk-release/framework/LoopMeCompilerUnity-Info.plist"; sourceTree = "<absolute>"; };
+		478E11751FFD222200F6CFFF /* LoopMeOrientationViewControllerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeOrientationViewControllerProtocol.h; sourceTree = "<group>"; };
 		4798C90D1F59986500B3A947 /* LoopMeAdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeAdView.m; sourceTree = "<group>"; };
 		4798C90F1F59986500B3A947 /* LoopMeMaximizedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopMeMaximizedViewController.h; sourceTree = "<group>"; };
 		4798C9101F59986500B3A947 /* LoopMeMaximizedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopMeMaximizedViewController.m; sourceTree = "<group>"; };
@@ -378,6 +380,7 @@
 		4798C91E1F59986500B3A947 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				478E11751FFD222200F6CFFF /* LoopMeOrientationViewControllerProtocol.h */,
 				4798C91F1F59986500B3A947 /* LoopMeJSCommunicatorProtocol.h */,
 				4798C9201F59986500B3A947 /* LoopMeVideoCommunicatorProtocol.h */,
 			);
@@ -675,6 +678,7 @@
 				4798C99C1F59986500B3A947 /* NSString+Encryption.h in Headers */,
 				4798C9B91F59986500B3A947 /* LoopMeBackView.h in Headers */,
 				4798C9871F59986500B3A947 /* LoopMeDestinationDisplayController.h in Headers */,
+				478E11761FFD222200F6CFFF /* LoopMeOrientationViewControllerProtocol.h in Headers */,
 				4798C9941F59986500B3A947 /* LoopMeURLResolver.h in Headers */,
 				4798C9AB1F59986500B3A947 /* LoopMeGlobalSettings.h in Headers */,
 				4798C9A01F59986500B3A947 /* UIImage+LoopMeBinaryImage.h in Headers */,

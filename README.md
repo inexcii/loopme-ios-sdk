@@ -1,11 +1,11 @@
 You can find integration guide in our github [wiki](https://github.com/loopme/loopme-ios-sdk/wiki) page.
 
 ## What's new ##
-**v6.4.3**
+**v6.4.5**
 
-- fixed `nil` appkey property in LoopMeInterstitial class.
-- iOS 11 compatibility updates
-- Bug fixes and performance improvments.
+- compatible with MRAID expandable banner
+- added viewWillAppear and viewWillDisappear events for AdView
+- fixed potential crash in case of changes ad server’s response format
 
 Please view the [changelog](CHANGELOG.md) for details.
 

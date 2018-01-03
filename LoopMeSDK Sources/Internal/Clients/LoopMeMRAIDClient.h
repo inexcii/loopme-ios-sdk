@@ -58,6 +58,9 @@ extern const struct LoopMeMRAIDStateStruct
 - (void)setSupports;
 - (NSDictionary *)getOrientationProperties;
 - (NSDictionary *)getExpandProperties;
+- (NSDictionary *)getResizeProperties;
+- (NSString *)getState;
+
 @end
 
 @protocol LoopMeMRAIDClientDelegate <NSObject>
@@ -69,5 +72,6 @@ extern const struct LoopMeMRAIDStateStruct
 - (void)mraidClient:(LoopMeMRAIDClient *)client useCustomClose:(BOOL)useCustomCLose;
 - (void)mraidClient:(LoopMeMRAIDClient *)client sholdPlayVideo:(NSURL *)URL;
 - (void)mraidClient:(LoopMeMRAIDClient *)client setOrientationProperties:(NSDictionary *)orientationProperties;
+- (void)mraidClientDidResizeAd:(LoopMeMRAIDClient *)client;
 
 @end

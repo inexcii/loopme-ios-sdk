@@ -251,7 +251,7 @@
 #pragma mark - LoopMeAdManagerDelegate
 
 - (void)adManager:(LoopMeAdManager *)manager didReceiveAdConfiguration:(LoopMeAdConfiguration *)adConfiguration {
-    if (!adConfiguration || adConfiguration.format != LoopMeAdFormatInterstitial) {
+    if (!adConfiguration) {
         NSString *errorMessage = @"Could not process ad: interstitial format expected.";
         LoopMeLogDebug(errorMessage);
         NSError *error = [LoopMeError errorForStatusCode:LoopMeErrorCodeIncorrectFormat];

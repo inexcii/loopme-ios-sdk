@@ -1,6 +1,12 @@
+## Version 6.4.5 (03.01.2018)
+
+- compatible with MRAID expandable banner
+- added viewWillAppear and viewWillDisappear events for AdView
+- fixed potential crash in case of changes ad server’s response format
+
 ## Version 6.4.3 (28.09.2017)
 
-- fixed `nil` appkey property in LoopMeInterstitial class.
+- fixed `nil` appkey property in LoopMeInterstitial class
 
 ## Version 6.4.2 (27.09.2017)
 
